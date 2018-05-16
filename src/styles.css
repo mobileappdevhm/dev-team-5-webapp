@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+/* Style the links inside the sidenav */
+
+
+body#app-body {
+  height: 100vh;
+  background-size: auto;
+  background-image: url('assets/images/HM-Muenchen.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
