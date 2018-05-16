@@ -13,7 +13,7 @@ const appRoutes: Routes = [
     data: { title: 'Login' }
   },
   { path: '',
-    redirectTo: '/',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   { path: '**', component: PageNotFoundComponent }

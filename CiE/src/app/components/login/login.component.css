@@ -1,0 +1,27 @@
+.login {
+  width: 100%;
+  text-align: center;
+  margin-top: 25%;
+  border-radius: 10px;
+}
+
+.login input {
+  width: 200px;
+  border-radius: 10px;
+  height: 32px;
+}
+
+.login  span {
+  margin-right: 20px;
+
+}
+
+.input-element {
+  margin: 20px;
+  padding: 10px;
+  color: #fff;
+}
+
+.input-group {
+  background-color: rgba(0,0,0,0.4);
+}
