@@ -1,14 +1,16 @@
 .login {
   width: 100%;
   text-align: center;
-  margin-top: 25%;
-  border-radius: 10px;
+  border-radius: 50px;
+  position: relative;
 }
 
 .login input {
-  width: 200px;
+  min-width: 200px;
   border-radius: 10px;
-  height: 32px;
+  font-size: 16px;
+  padding: 10px 15px;
+  border: 1px solid rgba(0,0,0,0.5);
 }
 
 .login  span {
@@ -17,11 +19,37 @@
 }
 
 .input-element {
-  margin: 20px;
-  padding: 10px;
   color: #fff;
+  margin-bottom: 20px;
 }
 
-.input-group {
-  background-color: rgba(0,0,0,0.4);
+.btn {
+  border: none;
+  color: #fff;
+  padding: 12px;
+  width: 200px;
+  margin: 20px 0px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
 }
+
+.btn__login {
+  text-align: center;
+  background-color: #e16e77;
+}
+
+.btn__blue {
+  text-align: center;
+  background-color: #0009e1;
+}
+
+/* On mouse-over */
+.btn:hover {
+  background: #eee;
+  color: #333;
+}
+.login {
+  color: white;
+}
+

@@ -1,9 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
 
 body {
   height: 100vh;
+  background: url('assets/images/HM-Muenchen.jpg') no-repeat center fixed; /* background picture red square */
   background-size: cover;
-  background: url('assets/images/HM-Muenchen.jpg') no-repeat ;
-  background-size: auto;
+}
+
+.sr-only {
+  display: none;
+}
+
+.small {
+  font-size: 85%;
 }
