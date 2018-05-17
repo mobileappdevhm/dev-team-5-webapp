@@ -1,12 +1,20 @@
 <div class="login">
   <div class="input-group">
     <div class="input-element">
-      <span>Username:</span> <input type="text">
+      <span class="sr-only">Username</span> <input type="text" placeholder="Username">
     </div>
     <div class="input-element">
-      <span>Password:</span> <input type="password">
-    </div>
+      <span class="sr-only">Password</span> <input type="password" placeholder="Password">
 
+    </div>
+    <div>
+      <div class="input-element">
+        <input class="btn btn__login" value="Login">
+        <div>
+          <span class="help small"><a routerLink="/login/help">Hilfe zum Login</a></span>
+        </div>
+      </div>
+    </div>
 
   </div>
 
