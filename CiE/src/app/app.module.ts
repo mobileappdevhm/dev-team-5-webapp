@@ -64,6 +64,10 @@ const appRoutes: Routes = [
     component: SheduleComponent,
     // data: { title: 'Hilfe zum Login' }
   },
+
+
+
+
   {
     path: 'login/welcome/favorites',
     component: FavoritesComponent,
