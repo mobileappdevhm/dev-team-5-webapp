@@ -9,9 +9,13 @@
     </div>
     <div>
       <div class="input-element">
-        <input class="btn btn__login" value="Login">
+       <!-- <button class="btn btn__login" value="Login" </button>-->
+
+          <button class="btn btn__login" routerLink="/login/welcome" type="button">Login</button>
+
+
         <div>
-          <span class="help small"><a routerLink="/login/help">Hilfe zum Login</a></span>
+          <span class="help small"><a routerLink="/login/welcome">Hilfe zum Login</a></span>
         </div>
       </div>
     </div>
@@ -20,3 +24,4 @@
 
 </div>
 
+<app-footer></app-footer>
