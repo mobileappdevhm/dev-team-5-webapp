@@ -5,7 +5,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './components/login/login.component';
-import { LoginHelpComponent } from './components/login-help/login-help.component';
+import { Welcome } from './components/welcome/welcome';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent} from "./components/footer/footer.component";
+import { CoursesComponent } from './components/courses/courses.component';
+import { LocationsComponent } from './components/locations/locations.component';
+import { SheduleComponent } from './components/shedule/shedule.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
 
 
 
@@ -17,14 +25,53 @@ const appRoutes: Routes = [
     data: { title: 'Login' }
   },
   {
-    path: 'login/help',
-    component: LoginHelpComponent,
+    path: 'login/welcome',
+    component: Welcome,
     data: { title: 'Hilfe zum Login' }
   },
+  {
+    path: 'login',
+    component: LoginComponent,
+    // data: { title: 'Hilfe zum Login' }
+  },
+  {
+    path: 'login/welcome',
+    component: NavbarComponent,
+    // data: { title: 'Hilfe zum Login' }
+  },
+
   { path: '',
     redirectTo: '/login',
     pathMatch: 'full'
+  },
+  {
+    path: 'login/welcome/courses',
+    component: CoursesComponent,
+    // data: { title: 'Hilfe zum Login' }
+  },
+  {
+    path: 'login/welcome/locations',
+    component: LocationsComponent,
+    // data: { title: 'Hilfe zum Login' }
+  },
+  {
+    path: 'login/welcome/profile',
+    component: ProfileComponent,
+    // data: { title: 'Hilfe zum Login' }
+  },
+  {
+    path: 'login/welcome/shedule',
+    component: SheduleComponent,
+    // data: { title: 'Hilfe zum Login' }
+  },
 
+
+
+
+  {
+    path: 'login/welcome/favorites',
+    component: FavoritesComponent,
+    // data: { title: 'Hilfe zum Login' }
   },
   { path: '**', component: PageNotFoundComponent }
 ];
@@ -34,7 +81,16 @@ const appRoutes: Routes = [
     AppComponent,
     PageNotFoundComponent,
     LoginComponent,
-    LoginHelpComponent
+    Welcome,
+    NavbarComponent,
+    FooterComponent,
+    CoursesComponent,
+    LocationsComponent,
+    SheduleComponent,
+    FavoritesComponent,
+    ProfileComponent,
+    WelcomePageComponent,
+
   ],
   imports: [
     RouterModule.forRoot(
