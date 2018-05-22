@@ -1,9 +1,35 @@
 h1 {   
     color: #ffffff;
-    text-align: center;
+    text-align: left;
+}
+
+h2 {
+    position: absolute;
+    color: #ffffff;
+    text-align: left;
+    font-size: 200%;
 }
 
 agm-map {
-    width:1830px;
-    height:400px;
+    width:610px;
+    height:610px;
+    position: right;
 }
+
+textarea {
+    position: absolute;
+	width: 1150px;
+    height: 600px;
+    left: 700px;
+    resize: none;
+	border: none;
+    padding: 0.5em;
+    font-size: 200%;
+    color: white;
+    background-color: rgba(0,0,0,0.4);
+	/* font-family: Roboto, sans-serif; */
+}
+
+/* textarea:focus {
+      background: rgba(0,0,0,0.4);
+} */
