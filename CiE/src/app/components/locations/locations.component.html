@@ -1,5 +1,25 @@
-<p>
-  locations works!
-</p>
+<!--Lothstraße -->
+<h1>Campus Lothstraße</h1>
+    <!-- this creates a google map on the page with the given lat/lng from  -->
+    <!-- the component as the initial center of the map:  -->
+<div>
+ <agm-map [zoom] ="18" [latitude]="48.154896" [longitude]="11.555725">
+   <agm-marker [latitude]="48.154896" [longitude]="11.555725"></agm-marker>
+ </agm-map>
+</div>
+
+ <h1>Campus Karlsstraße</h1>
+ <div>
+ <agm-map [zoom] ="18" [latitude]="48.142937" [longitude]="11.568702">
+    <agm-marker [latitude]="48.142937" [longitude]="11.568702"></agm-marker>
+ </agm-map>
+</div>
+
+ <h1>Campus Pasing</h1>
+ <div>
+ <agm-map [zoom] ="18" [latitude]="48.141572" [longitude]="11.451103">
+   <agm-marker [latitude]="48.141572" [longitude]="11.451103"></agm-marker>
+ </agm-map>
+</div>
 <app-footer></app-footer>
 <app-navbar></app-navbar>

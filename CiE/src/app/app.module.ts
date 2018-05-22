@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -14,7 +16,7 @@ import { SheduleComponent } from './components/shedule/shedule.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
-
+import { AgmCoreModule } from '@agm/core';
 
 
 //neue Seite
@@ -93,6 +95,12 @@ const appRoutes: Routes = [
 
   ],
   imports: [
+    BrowserModule,
+    CommonModule,
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDt7-VrmG9zjcZWa1yRkDP4hC6OgvtRx9Y'
+    }),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }

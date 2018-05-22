@@ -1,0 +1,9 @@
+h1 {   
+    color: #ffffff;
+    text-align: center;
+}
+
+agm-map {
+    width:1830px;
+    height:400px;
+}
