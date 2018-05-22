@@ -18,7 +18,9 @@ agm-map {
 
 textarea {
     position: absolute;
-	width: 1150px;
+    width: 1150px;
+    
+    /* zoom: 1; */
     height: 600px;
     left: 700px;
     resize: none;
