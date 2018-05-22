@@ -1,21 +1,36 @@
-
-
+<div class="nav-container"></div>
 <label>
 
-  <input type="checkbox">
+  <input type="checkbox" [(ngModel)]="menuCheckbox">
   <span class="menu">
     <span class="hamburger"></span>
   </span>
 
-  <ul>
-
-    <li>
-
-      <a routerLink="/login/welcome/courses">Courses</a>
-      <a routerLink="/login/welcome/favorites">Favorites</a>
-      <a routerLink="/login/welcome/locations">Locations</a>
-      <a routerLink="/login/welcome/schedule">Schedule</a>
-      <a routerLink="/login/welcome">Home</a>
+  <ul class="nav-container__list" (click)="menuChanged()">
+    <li class="nav-container__listitem">
+      <a routerLink="/login/welcome">
+        <i class="fa fa-home"></i> Home
+      </a>
     </li>
-    </ul>
+    <li class="nav-container__listitem">
+      <a routerLink="/welcome/courses">
+        <i class="fa fa-pencil"></i> Courses
+      </a>
+    </li>
+    <li class="nav-container__listitem">
+      <a routerLink="welcome/favorites">
+        <i class="fa fa-heart"></i> Favorites
+      </a>
+    </li>
+    <li class="nav-container__listitem">
+      <a routerLink="/welcome/locations">
+        <i class="fa fa-map-marker"></i> Locations
+      </a>
+    </li>
+    <li class="nav-container__listitem">
+      <a routerLink="/welcome/schedule">
+        <i class="fa fa-calendar"></i> Schedule
+      </a>
+    </li>
+  </ul>
 </label>
