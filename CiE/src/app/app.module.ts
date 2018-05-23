@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {FormsModule} from "@angular/forms";
-import {AngularFontAwesomeModule} from "angular-font-awesome";
+import { FormsModule } from "@angular/forms";
+import { AngularFontAwesomeModule } from "angular-font-awesome";
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -16,6 +17,8 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
+import { CourseListComponent } from "./components/course-list/course-list.component";
+import { FavoritesListComponent } from "./components/favorites-list/favorites-list.component";
 
 
 
@@ -48,7 +51,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'welcome/courses',
-    component: CoursesComponent,
+    component: CourseListComponent,
     // data: { title: 'Hilfe zum Login' }
   },
   {
@@ -68,7 +71,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'welcome/favorites',
-    component: FavoritesComponent,
+    component: FavoritesListComponent,
     // data: { title: 'Hilfe zum Login' }
   },
   { path: '**', component: PageNotFoundComponent }
@@ -88,7 +91,8 @@ const appRoutes: Routes = [
     FavoritesComponent,
     ProfileComponent,
     WelcomePageComponent,
-
+    CourseListComponent,
+    FavoritesListComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -97,7 +101,8 @@ const appRoutes: Routes = [
     ),
     BrowserModule,
     FormsModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
