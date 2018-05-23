@@ -26,4 +26,4 @@ before_script:
 - ng build
 
 script: 
-- npm run ci
+- karma start src/karma.conf.js --single-run
