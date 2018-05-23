@@ -41,9 +41,9 @@ export class CourseListComponent implements OnInit {
             }
           });
           // just take all courses with curricula
-          if(data[key].curricula.length > 0) {
+          // if(data[key].curricula.length > 0) {
             this.facList.push(data[key]);
-          }
+          // }
 
         }
       }
