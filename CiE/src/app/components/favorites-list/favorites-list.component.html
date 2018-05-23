@@ -6,14 +6,10 @@
 <div *ngFor="let fv of favList">
 
   <div class = "block">
-    
-    <b>{{ fv.id  }}</b>
-    <i>{{ fv.CourseName }}</i>
-    <i>{{ fv.CourseFaculty }}</i>
-
-
-    <button class="dropbtn" (click)="rmFromFav(fv)" onClick="location.reload(true)"> remove from Favorites </button>
-
+    <strong>{{ fv.id  }}</strong>
+    <em>{{ fv.CourseName }}</em>
+    <em>{{ fv.CourseFaculty }}</em>
+    <button class="dropbtn" (click)="rmFromFav(fv)"> <i class="fa fa-times"></i> Entfernen</button>
   </div>
-  
+
 </div>
