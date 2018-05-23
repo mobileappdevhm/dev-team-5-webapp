@@ -1,0 +1,36 @@
+.block {
+  margin: 8px 0;
+  height: 100px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: black;
+  word-wrap: break-word;
+  zoom: 1.0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+.inner-block {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -118,20 +118,25 @@ label input:checked + .menu + ul {
 }
 
 label .menu {
-
   position: absolute;
-  right: -100px;
+  right: 0;
   top: -100px;
   z-index: 100;
-  width: 200px;
-  height: 200px;
-  /*background: #f73636;*/
+  width: 100px;
+  height: 180px;
   border-radius: 50% 50% 50% 50%;
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #FFF;
   cursor: pointer;
+}
 
+label .menu-bg {
+  background: rgba(247, 54, 54, 0.8);
+}
+
+label .menu-bg .hamburger, label .menu-bg .hamburger:before, label .menu-bg .hamburger:after {
+  background-color: #fff;
 }
 
 label ul {

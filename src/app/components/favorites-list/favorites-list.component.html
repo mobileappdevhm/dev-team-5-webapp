@@ -1,0 +1,22 @@
+<h1>Favorites List</h1>
+
+<!-- <button (click)="getFaculty()">Get Departments</button> -->
+
+
+<div *ngFor="let fv of favList">
+
+  <div class = "block">
+    <div class="inner-block row">
+      <div class="col-md-4">
+        <em>{{ fv.CourseName }}</em>
+      </div>
+      <div class="col-md-4">
+        <em>{{ fv.CourseFaculty }}</em>
+      </div>
+      <div class="col-md-4">
+        <button class=" btn btn-danger" (click)="rmFromFav(fv)"> <i class="fa fa-heart"></i> Entfernen</button>
+      </div>
+    </div>
+  </div>
+
+</div>

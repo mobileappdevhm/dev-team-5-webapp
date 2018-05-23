@@ -2,9 +2,9 @@
 <label>
 
   <input type="checkbox" [(ngModel)]="menuCheckbox">
-  <span class="menu">
+  <div class="menu" ngClass="{{ menuCheckbox ? 'menu-bg' : ''}}">
     <span class="hamburger"></span>
-  </span>
+  </div>
 
   <ul *ngIf="menuCheckbox" class="nav-container__list" (click)="menuChanged()">
     <li class="nav-container__listitem">

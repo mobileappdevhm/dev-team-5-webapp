@@ -12,10 +12,8 @@ import { LoginComponent } from './components/login/login.component';
 import { Welcome } from './components/welcome/welcome';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent} from "./components/footer/footer.component";
-import { CoursesComponent } from './components/courses/courses.component';
 import { LocationsComponent } from './components/locations/locations.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
-import { FavoritesComponent } from './components/favorites/favorites.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
 import { CourseListComponent } from "./components/course-list/course-list.component";
@@ -85,10 +83,8 @@ const appRoutes: Routes = [
     Welcome,
     NavbarComponent,
     FooterComponent,
-    CoursesComponent,
     LocationsComponent,
     ScheduleComponent,
-    FavoritesComponent,
     ProfileComponent,
     WelcomePageComponent,
     CourseListComponent,

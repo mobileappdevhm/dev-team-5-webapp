@@ -1,14 +1,17 @@
 .block {
   margin: 8px 0;
   height: 100px;
-  width: 100vw;
-  background-color: rgb(255, 255, 255);
+  width: 100%;
+  background-color: rgba(255, 255, 255,0.6);
   color: black;
   word-wrap: break-word;
   zoom: 1.0;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
 }
-
 /* Dropdown Button */
 .dropbtn {
   background-color: #3498DB;
