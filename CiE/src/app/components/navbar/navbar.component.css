@@ -19,6 +19,7 @@
   font-size: 25px;
   color: #818181;
   display: block;
+
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -30,15 +31,19 @@
 .main {
   margin-left: 160px; /* Same as the width of the sidebar */
   padding: 0px 10px;
+
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
 }
-
-
 
 label .hamburger {
   position: absolute;
@@ -53,9 +58,8 @@ label .hamburger {
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
 
+
 }
-
-
 
 label .hamburger:after, label .hamburger:before {
   -webkit-transition: .5s ease-in-out;
@@ -69,28 +73,23 @@ label .hamburger:after, label .hamburger:before {
 
 }
 
-
-
 label .hamburger:before {
   top: -10px;
 }
 
 label .hamburger:after {
   bottom: -10px;
-}
 
+}
 
 label input {
   display: none;
 }
 
-
 label input:checked + .menu {
-  box-shadow: 0 0 0 100vw #f73636, 0 0 0 100vh #f73636;
+  box-shadow: 0 0 0 100vw rgba(247, 54, 54, 0.8), 0 0 0 100vh rgba(247, 54, 54, 0);
   border-radius: 0;
 }
-
-
 
 label input:checked + .menu .hamburger {
 
@@ -99,17 +98,12 @@ label input:checked + .menu .hamburger {
 
 }
 
-
-
 label input:checked + .menu .hamburger:after {
-
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
   bottom: 0;
 
 }
-
-
 
 label input:checked + .menu .hamburger:before {
 
@@ -123,7 +117,6 @@ label input:checked + .menu + ul {
   opacity: 1;
 }
 
-
 label .menu {
 
   position: absolute;
@@ -132,7 +125,7 @@ label .menu {
   z-index: 100;
   width: 200px;
   height: 200px;
- /* background: #f73636; */
+  /*background: #f73636;*/
   border-radius: 50% 50% 50% 50%;
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
@@ -141,25 +134,37 @@ label .menu {
 
 }
 
-
-
 label ul {
   z-index: 200;
   position: absolute;
-  top: 50%;
+  top: 120px;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   opacity: 0;
-  -webkit-transition: .25s 0s ease-in-out;
   transition: .25s 0s ease-in-out;
+  margin: 25% 0;
 }
-
-
 
 label a {
   margin-bottom: 1em;
   display: block;
   color: #fffafa;
   text-decoration: none;
+}
+
+label a:hover {
+  text-decoration: underline;
+}
+
+.nav-container__list {
+  list-style: none;
+  margin: 70px 0 0 0;
+  padding: 0;
+  text-align: center;
+
+}
+
+.nav-container__listitem {
+  font-size: 2rem;
 }

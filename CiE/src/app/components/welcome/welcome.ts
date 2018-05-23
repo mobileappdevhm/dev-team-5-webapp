@@ -11,5 +11,4 @@ export class Welcome implements OnInit {
 
   ngOnInit() {
   }
-
 }

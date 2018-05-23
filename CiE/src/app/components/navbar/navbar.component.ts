@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  menuCheckbox:boolean=false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  menuChanged() {
+      this.menuCheckbox=false;
   }
 
 }

@@ -1,0 +1,14 @@
+
+<h1>Course List</h1>
+
+<!-- <button (click)="getFaculty()">Get Departments</button> -->
+
+<div *ngFor="let fc of facList">
+
+  <div class = "block">{{ fc.name  }}
+
+    <button class="dropbtn" (click)="addToFav(fc)"> add to Favorites </button>
+  
+  </div>
+  
+</div>
