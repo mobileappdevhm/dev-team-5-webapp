@@ -19,6 +19,8 @@ before_install:
 
 before_script:
 - npm install -g angular-cli
+- npm install @agm/core -save
+- npm install rxjs@6 rxjs-compat@6 --save
 - npm install -g karma
 - npm install
 - ng build
