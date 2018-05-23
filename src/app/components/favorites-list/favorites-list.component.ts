@@ -3,6 +3,8 @@ import { Favorites } from './favorites';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+import { SERVER_URL } from '../../app.constants';
+
 @Component({
   selector: 'app-favorites-list',
   templateUrl: './favorites-list.component.html',
@@ -26,7 +28,7 @@ export class FavoritesListComponent implements OnInit {
   getFavorites() {
     this.favList = [];
 
-    this.http.get(this.SERVER_URL + '/Course').subscribe(data => {
+    this.http.get(SERVER_URL + '/Course').subscribe(data => {
 
       for (let key in data) {
         if(data.hasOwnProperty(key)) {
@@ -38,7 +40,7 @@ export class FavoritesListComponent implements OnInit {
 
   rmFromFav(param: Favorites){
 
-    this.http.delete(this.SERVER_URL + '/Course/' + param.id)
+    this.http.delete(SERVER_URL + '/Course/' + param.id)
     .subscribe(res => {
         console.log(res);
         this.getFavorites();

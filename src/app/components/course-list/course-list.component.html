@@ -7,7 +7,7 @@
 <div class="row course-elements">
   <div class="col-md-4 course-elements__wrapper" *ngFor="let fc of facList">
     <div class="course-element" ngClass="{{fc.curricula.length <= 0 ? 'no-classes': ''}}">
-      <div class="course-elements__header">{{ fc.name  }}</div>
+      <div class="course-elements__header" (click)="goToCourses()">{{ fc.name  }}</div>
       <div class="course-elements__body">
         <button class="btn btn-danger btn-sm" (click)="addToFav(fc)" *ngIf="!fc.fav"> <i class="fa fa-heart"></i> </button>
         <span *ngIf="fc.fav"><a routerLink="/welcome/favorites">Show all Favorites</a> </span>

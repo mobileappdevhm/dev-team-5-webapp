@@ -2,7 +2,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Faculty, Course } from './faculty';
-import {Favorites} from "../favorites-list/favorites";
+import { Favorites } from "../favorites-list/favorites";
+
+import { NINE_URL, SERVER_URL } from "../../app.constants";
 
 //import 'rxjs/add/operator/map';
 
@@ -16,10 +18,6 @@ import {Favorites} from "../favorites-list/favorites";
 
 export class CourseListComponent implements OnInit {
 
-  // URLs for API Request
-  readonly NINE_URL = 'https://nine.wi.hm.edu';
-  readonly SERVER_URL ='http://10.179.5.242:3000';
-
   // Variables
   faculties: Observable<Faculty[]>;
   facList: Faculty[] = [];
@@ -32,7 +30,7 @@ export class CourseListComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   getCourses() {
-    this.http.get(this.NINE_URL + '/api2/Faculty/Get').subscribe(data => {
+    this.http.get(NINE_URL + '/api2/Faculty/Get').subscribe(data => {
 
       for (let key in data) {
         if(data.hasOwnProperty(key)) {
@@ -43,9 +41,9 @@ export class CourseListComponent implements OnInit {
             }
           });
           // just take all courses with curricula
-          if(data[key].curricula.length > 0) {
+          // if(data[key].curricula.length > 0) {
             this.facList.push(data[key]);
-          }
+          // }
 
         }
       }
@@ -61,7 +59,7 @@ export class CourseListComponent implements OnInit {
   getFavorites() {
     this.favList = [];
 
-    this.http.get(this.SERVER_URL + '/Course').subscribe(data => {
+    this.http.get(SERVER_URL + '/Course').subscribe(data => {
       for (let key in data) {
         if(data.hasOwnProperty(key)) {
           this.favList.push(data[key]);
@@ -72,7 +70,7 @@ export class CourseListComponent implements OnInit {
 
   addToFav(param: Faculty){
 
-    this.http.post(this.SERVER_URL + '/Course', {
+    this.http.post(SERVER_URL + '/Course', {
 
       CourseId: param.id,
       CourseName: param.name,
@@ -92,5 +90,9 @@ export class CourseListComponent implements OnInit {
   ngOnInit() {
     this.getFavorites();
     this.getCourses()
+  }
+
+  goToCourses() {
+    console.log(this.facList);
   }
 }
