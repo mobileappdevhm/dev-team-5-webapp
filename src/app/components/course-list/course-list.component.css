@@ -60,3 +60,40 @@
 .show {
   display: block;
 }
+
+
+.course-elements__wrapper {
+  width: 100%;
+}
+
+.course-element {
+  width: 100%;
+  background-color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 40px;
+  margin: 20px 0px;
+  border: 1px solid #aaa;
+  border-radius: 12px;
+  cursor: pointer;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+.course-element:hover {
+  background-color: rgba(255,255,255,1);
+  border: 1px dashed #aaa;
+}
+
+.course-elements__header {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.no-classes {
+  background-color: #ccc;
+  cursor: no-drop;
+
+}

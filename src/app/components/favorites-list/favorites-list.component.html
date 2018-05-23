@@ -1,22 +1,37 @@
-<h1>Favorites List</h1>
+
+<div class="page-header">
+  <h1>Your favorites</h1>
+</div>
+
 
 <!-- <button (click)="getFaculty()">Get Departments</button> -->
 
-
-<div *ngFor="let fv of favList">
-
-  <div class = "block">
-    <div class="inner-block row">
-      <div class="col-md-4">
-        <em>{{ fv.CourseName }}</em>
-      </div>
-      <div class="col-md-4">
-        <em>{{ fv.CourseFaculty }}</em>
-      </div>
-      <div class="col-md-4">
-        <button class=" btn btn-danger" (click)="rmFromFav(fv)"> <i class="fa fa-heart"></i> Entfernen</button>
-      </div>
+<div class="page-content row">
+  <div class="col-md-12">
+    <div class="no-favs" *ngIf="favList.length <= 0">
+      <p>You don't have any favorites yet. <a routerLink="/welcome/courses">Add some now.</a> </p>
     </div>
+
+    <div *ngFor="let fv of favList">
+
+      <div class = "block">
+        <div class="inner-block row">
+          <div class="col-md-4">
+            <em>{{ fv.CourseName }}</em>
+          </div>
+          <div class="col-md-4">
+            <em>{{ fv.CourseFaculty }}</em>
+          </div>
+          <div class="col-md-4">
+            <button class=" btn btn-danger" (click)="rmFromFav(fv)"> <i class="fa fa-heart"></i> Entfernen</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
   </div>
 
 </div>
+

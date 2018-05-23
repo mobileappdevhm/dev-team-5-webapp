@@ -21,10 +21,10 @@ export class CourseListComponent implements OnInit {
   readonly SERVER_URL ='http://10.179.5.242:3000';
 
   // Variables
-  faculties: Observable<Faculty[]>
+  faculties: Observable<Faculty[]>;
   facList: Faculty[] = [];
 
-  favorites: Observable<Favorites[]>
+  favorites: Observable<Favorites[]>;
   favList: Favorites[] = [];
 
 
@@ -36,14 +36,24 @@ export class CourseListComponent implements OnInit {
 
       for (let key in data) {
         if(data.hasOwnProperty(key)) {
+
           this.favList.forEach( (event) => {
-              if (data[key].id == event.CourseId) {
-                data[key].fav=true;
-              }
-            });
-          this.facList.push(data[key]);
+            if (data[key].id == event.CourseId) {
+              data[key].fav=true;
+            }
+          });
+          // just take all courses with curricula
+          if(data[key].curricula.length > 0) {
+            this.facList.push(data[key]);
+          }
+
         }
-      };
+      }
+
+      this.facList.sort((a, b) => {
+        var x = a.name; var y = b.name;
+        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+      });
     });
   }
 
@@ -61,7 +71,7 @@ export class CourseListComponent implements OnInit {
   }
 
   addToFav(param: Faculty){
-    
+
     this.http.post(this.SERVER_URL + '/Course', {
 
       CourseId: param.id,
@@ -70,12 +80,11 @@ export class CourseListComponent implements OnInit {
 
 
     })
-    .subscribe(res => {
-      param.fav = true;
-      console.log(res);
-    },
-    err => {console.log("Error occured!");
-  });
+      .subscribe(res => {
+          param.fav = true;
+        },
+        err => {console.log("Error occured!");
+        });
 
 
   }
