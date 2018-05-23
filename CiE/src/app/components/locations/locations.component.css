@@ -1,4 +1,4 @@
-h1 {   
+h1 {
     color: #ffffff;
     text-align: left;
 }
@@ -11,27 +11,11 @@ h2 {
 }
 
 agm-map {
-    width:610px;
-    height:610px;
-    position: right;
+  width: 100%;
+  height: 400px;
+
 }
 
-textarea {
-    position: absolute;
-    width: 1150px;
-    
-    /* zoom: 1; */
-    height: 600px;
-    left: 700px;
-    resize: none;
-	border: none;
-    padding: 0.5em;
-    font-size: 200%;
-    color: white;
-    background-color: rgba(0,0,0,0.4);
-	/* font-family: Roboto, sans-serif; */
+.single-map-element {
+  margin-bottom: 50px;
 }
-
-/* textarea:focus {
-      background: rgba(0,0,0,0.4);
-} */
