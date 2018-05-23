@@ -27,4 +27,4 @@ before_script:
 
 script: 
 #- node_modules/karma/bin/karma start src/karma.conf.js --single-run
-ng test --karma-config src/karma.conf.js
+- ng test --karma-config src/karma.conf.js
