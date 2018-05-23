@@ -14,6 +14,8 @@ export class Faculty {
     curricula: {
         [key: string] : Curricula
     };
+
+    fav: boolean;
 }
 
 
@@ -25,5 +27,5 @@ export interface Course {
     CourseFaculty: number;
     CourseStatus: string;
     CourseDescription: string;
-   
+  
 }

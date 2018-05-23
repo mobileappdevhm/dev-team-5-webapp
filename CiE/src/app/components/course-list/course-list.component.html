@@ -7,8 +7,8 @@
 
   <div class = "block">{{ fc.name  }}
 
-    <button class="dropbtn" (click)="addToFav(fc)"> add to Favorites </button>
-  
+    <button class="dropbtn" (click)="addToFav(fc)" *ngIf="!fc.fav"> <i class="fa fa-heart"></i> </button>
+
   </div>
-  
+
 </div>

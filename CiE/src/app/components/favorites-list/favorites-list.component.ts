@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 export class FavoritesListComponent implements OnInit {
 
   // URLs for API Request
-  readonly SERVER_URL ='http://10.179.62.220:3000';
+  readonly SERVER_URL ='http://10.179.5.242:3000';
 
   // Variables
   favorites: Observable<Favorites[]>
@@ -24,9 +24,10 @@ export class FavoritesListComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   getFavorites() {
+    this.favList = [];
 
-    this.http.get(this.SERVER_URL + '/Course').subscribe(data => { 
-      
+    this.http.get(this.SERVER_URL + '/Course').subscribe(data => {
+
       for (let key in data) {
         if(data.hasOwnProperty(key)) {
           this.favList.push(data[key]);
@@ -34,23 +35,22 @@ export class FavoritesListComponent implements OnInit {
       };
     });
   }
-  
+
   rmFromFav(param: Favorites){
 
     this.http.delete(this.SERVER_URL + '/Course/' + param.id)
-
-    .subscribe(res => {console.log(res);
+    .subscribe(res => {
+        console.log(res);
+        this.getFavorites();
     },
     err => {console.log("Error occured!");
   });
 
-  
- 
+
+
   }
 
   ngOnInit() {
-
     this.getFavorites()
-
   }
 }
