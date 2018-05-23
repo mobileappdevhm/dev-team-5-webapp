@@ -25,4 +25,3 @@ before_script:
 - npm install
 - ng build
 
-script: karma start src/karma.conf.js --single-run
