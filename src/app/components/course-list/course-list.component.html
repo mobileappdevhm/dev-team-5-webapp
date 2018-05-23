@@ -1,17 +1,19 @@
-
-<h1>Course List</h1>
+<div class="page-header">
+  <h1>Courses</h1>
+</div>
 
 <!-- <button (click)="getFaculty()">Get Departments</button> -->
 
-<div *ngFor="let fc of facList">
+<div class="row course-elements">
+  <div class="col-md-4 course-elements__wrapper" *ngFor="let fc of facList">
+    <div class="course-element" ngClass="{{fc.curricula.length <= 0 ? 'no-classes': ''}}">
+      <div class="course-elements__header">{{ fc.name  }}</div>
+      <div class="course-elements__body">
+        <button class="btn btn-danger btn-sm" (click)="addToFav(fc)" *ngIf="!fc.fav"> <i class="fa fa-heart"></i> </button>
+        <span *ngIf="fc.fav"><a routerLink="/welcome/favorites">Show all Favorites</a> </span>
 
-  <div class="block">
-    <div class="inner-block">
-      {{ fc.name  }}
-
-      <button class="btn btn-danger" (click)="addToFav(fc)" *ngIf="!fc.fav"> <i class="fa fa-heart"></i> </button>
-
+      </div>
     </div>
   </div>
-
 </div>
+
