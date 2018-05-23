@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from "@angular/forms";
 import { AngularFontAwesomeModule } from "angular-font-awesome";
 import { HttpClientModule } from '@angular/common/http';
@@ -20,8 +21,7 @@ import { WelcomePageComponent } from './components/welcome-page/welcome-page.com
 import { CourseListComponent } from "./components/course-list/course-list.component";
 import { FavoritesListComponent } from "./components/favorites-list/favorites-list.component";
 
-
-
+import { AgmCoreModule } from '@agm/core';
 
 const appRoutes: Routes = [
   {
@@ -95,14 +95,18 @@ const appRoutes: Routes = [
     FavoritesListComponent
   ],
   imports: [
+    BrowserModule,
+    CommonModule,
+    FormsModule,
+    AngularFontAwesomeModule,
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDt7-VrmG9zjcZWa1yRkDP4hC6OgvtRx9Y'
+    }),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }
     ),
-    BrowserModule,
-    FormsModule,
-    AngularFontAwesomeModule,
-    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

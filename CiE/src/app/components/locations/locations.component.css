@@ -1,0 +1,21 @@
+h1 {
+    color: #ffffff;
+    text-align: left;
+}
+
+h2 {
+    position: absolute;
+    color: #ffffff;
+    text-align: left;
+    font-size: 200%;
+}
+
+agm-map {
+  width: 100%;
+  height: 400px;
+
+}
+
+.single-map-element {
+  margin-bottom: 50px;
+}
