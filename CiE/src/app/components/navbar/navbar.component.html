@@ -6,7 +6,7 @@
     <span class="hamburger"></span>
   </span>
 
-  <ul class="nav-container__list" (click)="menuChanged()">
+  <ul *ngIf="menuCheckbox" class="nav-container__list" (click)="menuChanged()">
     <li class="nav-container__listitem">
       <a routerLink="/login/welcome">
         <i class="fa fa-home"></i> Home

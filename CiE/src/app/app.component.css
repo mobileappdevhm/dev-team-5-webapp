@@ -1,9 +1,7 @@
 .content {
   background-color: rgba(0,0,0,0.4);
-  padding: 30px 0;
-  top: 20px;
-  position: relative;
   color: #eee;
-  padding: 30px;
   border-radius: 8px;
+  padding: 30px;
+  margin-top: 15px;
 }
