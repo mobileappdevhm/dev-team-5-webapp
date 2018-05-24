@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Favorites } from './favorites';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { LoginService } from '../../services/login/login.service';
 
 import { SERVER_URL } from '../../app.constants';
 
@@ -21,9 +22,12 @@ export class FavoritesListComponent implements OnInit {
   favorites: Observable<Favorites[]>
   favList: Favorites[] = [];
 
+  username:any = '';
 
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private loginService: LoginService) {
+    this.username = this.loginService.username;
+  }
 
   getFavorites() {
     this.favList = [];
@@ -41,12 +45,12 @@ export class FavoritesListComponent implements OnInit {
   rmFromFav(param: Favorites){
 
     this.http.delete(SERVER_URL + '/Course/' + param.id)
-    .subscribe(res => {
-        console.log(res);
-        this.getFavorites();
-    },
-    err => {console.log("Error occured!");
-  });
+      .subscribe(res => {
+          console.log(res);
+          this.getFavorites();
+        },
+        err => {console.log("Error occured!");
+        });
 
 
 
@@ -56,3 +60,4 @@ export class FavoritesListComponent implements OnInit {
     this.getFavorites()
   }
 }
+

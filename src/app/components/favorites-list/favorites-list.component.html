@@ -9,7 +9,7 @@
 <div class="page-content row">
   <div class="col-md-12">
     <div class="no-favs" *ngIf="favList.length <= 0">
-      <p>You don't have any favorites yet. <a routerLink="/welcome/courses">Add some now.</a> </p>
+      <p>Hey {{username}}, you don't have any favorites yet. <a routerLink="/welcome/courses">Add some now.</a> </p>
     </div>
 
     <div *ngFor="let fv of favList">
@@ -35,3 +35,4 @@
 
 </div>
 
+<app-navbar></app-navbar>
