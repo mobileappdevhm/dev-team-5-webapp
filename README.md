@@ -1,6 +1,6 @@
 # CiE
 
-# Local JSON Server
+## Local JSON Server
 
 Follow the instructions of this link for setting up a local JSON-Server for the course-api-requests
 [SETTING UP LOCAL JSON SERVER](https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server-36da8680136d)
