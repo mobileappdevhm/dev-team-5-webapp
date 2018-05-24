@@ -1,5 +1,10 @@
 # CiE
 
+# Local JSON Server
+
+Follow the instructions of this link for setting up a local JSON-Server for the course-api-requests
+[SETTING UP LOCAL JSON SERVER](https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server-36da8680136d)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
 
 ## Development server
