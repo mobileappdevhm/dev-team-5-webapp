@@ -20,6 +20,7 @@ import { FavoritesListComponent } from "./components/favorites-list/favorites-li
 import { AgmCoreModule } from '@agm/core';
 import {APP_BASE_HREF} from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { LogoutComponent } from "./components/logout/logout.component";
 
 describe('Router: App', () => {
 
@@ -40,6 +41,7 @@ describe('Router: App', () => {
         FooterComponent,
         NavbarComponent, 
         LoginComponent,
+        LogoutComponent,
         Welcome,
         AppComponent
       ],
@@ -79,6 +81,12 @@ describe('Router: App', () => {
     router.navigate(['/login']);
     tick(50);
     expect(location.path()).toBe('/login');
+  }));
+
+  it('navigate to /logout redirects you to /logout', fakeAsync(() => {
+    router.navigate(['/logout']);
+    tick(50);
+    expect(location.path()).toBe('/logout');
   }));
 
   it('navigate to /login/welcome redirects you to /login/welcome', fakeAsync(() => {
