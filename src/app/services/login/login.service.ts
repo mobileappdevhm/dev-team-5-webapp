@@ -11,13 +11,13 @@ export class LoginService {
 
   get username(): string {
     if (this._username === '' || this._username === undefined || this._username === null) {
-      this._username = localStorage.getItem('username');
+      this._username = sessionStorage.getItem('username');
     }
     return this._username;
   }
 
   set username(value: string) {
-    localStorage.setItem('username', value);
+    sessionStorage.setItem('username', value);
     this._username = value;
   }
 
