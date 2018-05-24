@@ -21,7 +21,7 @@ import { FavoritesListComponent } from "./components/favorites-list/favorites-li
 
 import { AgmCoreModule } from '@agm/core';
 
-const appRoutes: Routes = [
+export const appRoutes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
