@@ -2,6 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Welcome } from './welcome';
 import {AppComponent} from "../../app.component";
 import { AppModule } from '../../app.module';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { FormsModule } from '@angular/forms';
 
 describe('Welcome', () => {
   let component: Welcome;
@@ -9,7 +11,8 @@ describe('Welcome', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Welcome ]
+      declarations: [ Welcome, NavbarComponent ],
+      imports: [ FormsModule]
     })
     .compileComponents();
   }));
