@@ -1,27 +1,126 @@
-import { TestBed, async } from '@angular/core/testing';
+import {Location} from "@angular/common";
+import {TestBed, fakeAsync, tick} from '@angular/core/testing';
+import {RouterTestingModule} from "@angular/router/testing";
+import { Router, RouterModule, Routes } from "@angular/router";
+import { appRoutes } from "./app.module"
+import { FormsModule } from "@angular/forms";
+
 import { AppComponent } from './app.component';
-describe('AppComponent', () => {
-  beforeEach(async(() => {
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LoginComponent } from './components/login/login.component';
+import { Welcome } from './components/welcome/welcome';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent} from "./components/footer/footer.component";
+import { LocationsComponent } from './components/locations/locations.component';
+import { ScheduleComponent } from './components/schedule/schedule.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
+import { CourseListComponent } from "./components/course-list/course-list.component";
+import { FavoritesListComponent } from "./components/favorites-list/favorites-list.component";
+import { AgmCoreModule } from '@agm/core';
+import {APP_BASE_HREF} from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+
+describe('Router: App', () => {
+
+  let location: Location;
+  let router: Router;
+  let fixture;
+
+  beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
+        FavoritesListComponent,
+        CourseListComponent,
+        WelcomePageComponent,
+        ProfileComponent,
+        ScheduleComponent,
+        LocationsComponent,
+        PageNotFoundComponent,
+        FooterComponent,
+        NavbarComponent, 
+        LoginComponent,
+        Welcome,
         AppComponent
       ],
-    }).compileComponents();
+      imports: [ AgmCoreModule.forRoot(), FormsModule, RouterModule.forRoot(
+        appRoutes,
+        { enableTracing: false }
+      ), 
+      HttpClientModule
+      ],
+      providers: [{provide: APP_BASE_HREF, useValue : '/' }]
+    });
+
+    router = TestBed.get(Router);
+    location = TestBed.get(Location);
+
+    fixture = TestBed.createComponent(AppComponent);
+
+  });
+
+  it('fakeAsync works', fakeAsync(() => {
+    let promise = new Promise((resolve) => {
+      setTimeout(resolve, 10)
+    });
+    let done = false;
+    promise.then(() => done = true);
+    tick(50);
+    expect(done).toBeTruthy();
   }));
-  // it('should create the app', async(() => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   const app = fixture.debugElement.componentInstance;
-  //   expect(app).toBeTruthy();
-  // }));
-  // it(`should have as title 'app'`, async(() => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   const app = fixture.debugElement.componentInstance;
-  //   expect(app.title).toEqual('app');
-  // }));
-  // it('should render title in a h1 tag', async(() => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.debugElement.nativeElement;
-  //   expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
-  // }));
+
+  it('navigate to "" redirects you to /login', fakeAsync(() => {
+    router.navigate(['']);
+    tick(50);
+    expect(location.path()).toBe('/login');
+  }));
+
+  it('navigate to /login redirects you to /login', fakeAsync(() => {
+    router.navigate(['/login']);
+    tick(50);
+    expect(location.path()).toBe('/login');
+  }));
+
+  it('navigate to /login/welcome redirects you to /login/welcome', fakeAsync(() => {
+    router.navigate(['/login/welcome']);
+    tick(50);
+    expect(location.path()).toBe('/login/welcome');
+  }));
+
+  it('navigate to welcome/courses redirects you to welcome/courses', fakeAsync(() => {
+    router.navigate(['/welcome/courses']);
+    tick(50);
+    expect(location.path()).toBe('/welcome/courses');
+  }));
+
+  it('navigate to welcome/favorites redirects you to welcome/favorites', fakeAsync(() => {
+    router.navigate(['/welcome/favorites']);
+    tick(50);
+    expect(location.path()).toBe('/welcome/favorites');
+  }));
+
+  it('navigate to /welcome/locations redirects you to welcome/locations', fakeAsync(() => {
+    router.navigate(['/welcome/locations']);
+    tick(50);
+    expect(location.path()).toBe('/welcome/locations');
+  }));
+
+  it('navigate to /welcome/profile redirects you to /welcome/profile', fakeAsync(() => {
+    router.navigate(['/welcome/profile']);
+    tick(50);
+    expect(location.path()).toBe('/welcome/profile');
+  }));
+
+  it('navigate to /welcome/schedule redirects you to /welcome/schedule', fakeAsync(() => {
+    router.navigate(['/welcome/schedule']);
+    tick(50);
+    expect(location.path()).toBe('/welcome/schedule');
+  }));
+
+  it('navigate to ** redirects you to **', fakeAsync(() => {
+    router.navigate(['/**']);
+    tick(50);
+    expect(location.path()).toBe('/**');
+  }));
+
 });
