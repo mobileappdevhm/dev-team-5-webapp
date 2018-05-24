@@ -20,6 +20,7 @@ import { CourseListComponent } from "./components/course-list/course-list.compon
 import { FavoritesListComponent } from "./components/favorites-list/favorites-list.component";
 
 import { AgmCoreModule } from '@agm/core';
+import { LogoutComponent } from './components/logout/logout.component';
 
 export const appRoutes: Routes = [
   {
@@ -31,6 +32,11 @@ export const appRoutes: Routes = [
     path: 'login/welcome',
     component: Welcome,
     data: { title: 'Hilfe zum Login' }
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent,
+    // data: { title: 'Hilfe zum Login' }
   },
   {
     path: 'login',
@@ -88,7 +94,8 @@ export const appRoutes: Routes = [
     ProfileComponent,
     WelcomePageComponent,
     CourseListComponent,
-    FavoritesListComponent
+    FavoritesListComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
