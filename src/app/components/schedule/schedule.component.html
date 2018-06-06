@@ -1,5 +1,38 @@
-<p>
-  schedule works!
+<div class="page-header">
+  <h2> Today: {{today|date:'fullDate'}} </h2>
+</div>
 
-  <app-navbar></app-navbar>
-</p>
+
+<div class="page-content row">
+  <div class="col-md-12">
+    <div class="no-favs" *ngIf="scheduleList.length <= 0">
+      <p>Hey {{username}}, you don't have any course on your schedule yet. <a routerLink="/welcome/courses">Add some now.</a> </p>
+    </div>
+    <div>
+    
+    </div>
+
+    <div *ngFor="let sc of scheduleList">
+
+      <div class = "block">
+        <div class="inner-block row">
+          <div *ngIf sc.CourseDateclass="col-md-4">
+            <em>{{ sc.CourseName }}</em>
+          </div>
+          <div class="col-md-4">
+            <em>{{ sc.CourseFaculty }}</em>
+          </div>
+          <div class="col-md-4">  
+            <em>{{ sc.CourseDate|date:'short' }}</em>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+<app-navbar></app-navbar>
