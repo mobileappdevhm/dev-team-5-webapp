@@ -9,6 +9,7 @@ import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {Welcome} from "./components/welcome/welcome";
 import {ScheduleComponent} from "./components/schedule/schedule.component";
 import {FavoritesListComponent} from "./components/favorites-list/favorites-list.component";
+import {ContactComponent} from "./components/contact/contact.component";
 import {LogoutComponent} from "./components/logout/logout.component";
 
 const appRoutes: Routes = [
@@ -57,6 +58,11 @@ const appRoutes: Routes = [
     component: FavoritesListComponent,
     canActivate: [AuthGuard]
     // data: { title: 'Hilfe zum Login' }
+  },
+  {
+    path:'contact',
+    component: ContactComponent,
+    canActivate: [AuthGuard]
   },
 
   {path: '**', component: PageNotFoundComponent}
