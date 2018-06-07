@@ -1,14 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Favorites } from "../favorites-list/favorites";
-import { Observable } from 'rxjs';
-import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { LoginService } from '../../services/login/login.service';
 import { SERVER_URL } from "../../app.constants";
-import { CourseObject } from "../course-list/course";
 import { Schedule } from "./schedule";
-import {
- getSchedules
-} from 'date-now';
+import { getSchedules } from 'date-now';
 
 @Component({
   selector: 'app-shedule',
@@ -16,18 +11,16 @@ import {
   styleUrls: ['./schedule.component.css']
 })
 export class ScheduleComponent implements OnInit {
+
   today = Date.now();
-  cool = false;
   readonly SERVER_URL ='http://10.179.33.4:3000';
 
-  favorites: Observable<Schedule[]>
   scheduleList: Schedule[] = [];
-  courseList: CourseObject[] = [];
-  
-  username:any = '';
+
+  username:string = '';
 
   constructor(private http: HttpClient, private loginService: LoginService) {
-    this.username = this.loginService.username;
+    this.username = this.loginService.user_firstname;
   }
 
   getSchedules() {
@@ -39,12 +32,13 @@ export class ScheduleComponent implements OnInit {
         if(data.hasOwnProperty(key)) {
           this.scheduleList.push(data[key]);
         }
-      };
+      }
+
     });
   }
 
 
-  
+
   ngOnInit() {
     this.getSchedules();
   }

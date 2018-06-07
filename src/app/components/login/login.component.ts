@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     this.loading = true;
     setTimeout(()=> {
       if(this.loginService.isUserLoggedIn()) {
-        this.router.navigate(['/login/welcome']);
+        this.router.navigate(['/']);
       } else {
         this.wrongPwOrUser = true;
       }
