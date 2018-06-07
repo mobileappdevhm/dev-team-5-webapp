@@ -5,15 +5,22 @@
 <!-- <button (click)="getFaculty()">Get Departments</button> -->
 
 <div class="row course-elements">
-  <div class="col-md-4 course-elements__wrapper" *ngFor="let fc of facList">
-    <div class="course-element" ngClass="{{fc.curricula.length <= 0 ? 'no-classes': ''}}">
-      <div class="course-elements__header" (click)="goToCourses()">{{ fc.name  }}</div>
+  <div class="col-md-4 course-elements__wrapper" *ngFor="let cl of courseList">
+<!-- 
+    <app-description [myCourse]="cl">  </app-description> -->
+    <!-- Hier Kurse filtern (Ampel) -->
+    <div class="course-element" ngClass="{{cl.isCoterie == false && cl.hasHomeBias == false}}">
+      <div class="course-elements__header" [routerLink]="['descriptions', cl.id]">{{ cl.name }}</div>
+      <!-- <a> routerLink= "/descriptions"</a> -->
       <div class="course-elements__body">
-        <button class="btn btn-danger btn-sm" (click)="addToFav(fc)" *ngIf="!fc.fav"> <i class="fa fa-heart"></i> </button>
-        <span *ngIf="fc.fav"><a routerLink="/welcome/favorites">Show all Favorites</a> </span>
+        <button class="btn btn-danger btn-sm" (click)="addToFav(cl)" *ngIf="!cl.fav"> <i class="fa fa-heart"></i> </button>
+        <span *ngIf="cl.fav"><a routerLink="/welcome/favorites">Show all Favorites</a> </span>
 
       </div>
     </div>
+
+ 
+
   </div>
 </div>
 

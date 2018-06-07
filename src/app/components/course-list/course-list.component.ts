@@ -3,8 +3,10 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Faculty, Course } from './faculty';
 import { Favorites } from "../favorites-list/favorites";
+import { Description } from "../description/description"
 
 import { NINE_URL, SERVER_URL } from "../../app.constants";
+import { CourseObject } from './courses';
 
 //import 'rxjs/add/operator/map';
 
@@ -21,16 +23,17 @@ export class CourseListComponent implements OnInit {
   // Variables
   faculties: Observable<Faculty[]>;
   facList: Faculty[] = [];
+  courseList: CourseObject[] = [];
 
   favorites: Observable<Favorites[]>;
   favList: Favorites[] = [];
-
+  Description: Description;
 
 
   constructor(private http: HttpClient) {}
 
   getCourses() {
-    this.http.get(NINE_URL + '/api2/Faculty/Get').subscribe(data => {
+    this.http.get(NINE_URL + '/api/v2/courses/FK%2013/CIE/SoSe%2018').subscribe(data => {
 
       for (let key in data) {
         if(data.hasOwnProperty(key)) {
@@ -42,16 +45,18 @@ export class CourseListComponent implements OnInit {
           });
           // just take all courses with curricula
           // if(data[key].curricula.length > 0) {
-            this.facList.push(data[key]);
+            this.courseList.push(data[key]);
           // }
 
         }
       }
 
-      this.facList.sort((a, b) => {
+      this.courseList.sort((a, b) => {
         var x = a.name; var y = b.name;
         return ((x < y) ? -1 : ((x > y) ? 1 : 0));
       });
+
+      // console.log(this.courseList)
     });
   }
 
@@ -68,13 +73,13 @@ export class CourseListComponent implements OnInit {
     });
   }
 
-  addToFav(param: Faculty){
+  addToFav(param: CourseObject){
 
     this.http.post(SERVER_URL + '/Course', {
 
       CourseId: param.id,
       CourseName: param.name,
-      CourseFaculty: param.shortname
+      CourseFaculty: param.shortName
 
 
     })
@@ -89,10 +94,17 @@ export class CourseListComponent implements OnInit {
 
   ngOnInit() {
     this.getFavorites();
-    this.getCourses()
+    this.getCourses();
+    // this._sharedService.setauthorData(this.)
   }
 
   goToCourses() {
-    console.log(this.facList);
+    console.log(this.courseList);
   }
+
+  // showDescription(param: CourseObject){
+  // this.Description.name = param.name;
+  // }
+  
+
 }

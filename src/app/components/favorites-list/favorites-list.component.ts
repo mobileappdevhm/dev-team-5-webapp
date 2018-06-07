@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Favorites } from './favorites';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LoginService } from '../../services/login/login.service';
 
 import { SERVER_URL } from '../../app.constants';
+import { DescriptionComponent } from '../description/description.component';
 
 @Component({
   selector: 'app-favorites-list',
@@ -15,8 +16,9 @@ import { SERVER_URL } from '../../app.constants';
 
 export class FavoritesListComponent implements OnInit {
 
+ 
   // URLs for API Request
-  readonly SERVER_URL ='http://10.179.5.242:3000';
+  readonly SERVER_URL ='http://10.179.6.101:3000';
 
   // Variables
   favorites: Observable<Favorites[]>
@@ -26,7 +28,7 @@ export class FavoritesListComponent implements OnInit {
 
 
   constructor(private http: HttpClient, private loginService: LoginService) {
-    this.username = this.loginService.user_firstname;
+   
   }
 
   getFavorites() {
@@ -58,6 +60,7 @@ export class FavoritesListComponent implements OnInit {
 
   ngOnInit() {
     this.getFavorites()
+    //this.desc.getDetails()
   }
 }
 

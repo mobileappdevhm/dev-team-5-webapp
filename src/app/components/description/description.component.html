@@ -1,0 +1,24 @@
+<div *ngIf="isDataAvailable">
+    <b class="course-elements_title"> {{ getLectureName() }}</b>
+    <p></p>
+    <p></p>
+
+    <div class="course-element">
+
+        <div class="course-elements__header">
+
+            <p> <strong>Start date:</strong> {{ getDates() | date:'MMMM d, y, h:mm a' }} </p>
+            <p> <strong>Description:</strong> {{ getDescriptions() }}</p>
+            <p> <strong>Room:</strong> {{ getRoom() }} </p>
+            <p> <strong>Campus:</strong> {{ getCampus() }} </p>
+            <p> <strong>Lecturer:</strong> {{ getName() }} </p>
+       
+        </div>
+
+        <span *ngIf="checkedRoute==true" class="single-icon"><i class="fa fa-pencil"></i></span><a *ngIf="checkedRoute==true" routerLink="/courses"><strong>Back to courses</strong> </a>
+        <span *ngIf="checkedRoute==false" class="single-icon"><i class="fa fa-heart"></i></span><a *ngIf="checkedRoute==false" routerLink="/favorites"><strong>Back to favorites</strong> </a>
+
+    </div>
+   
+</div>
+  
