@@ -57,3 +57,8 @@
   width: 350px;
   margin: 120px auto;
 }
+
+.loading-indicator {
+  font-size: 3rem;
+  padding: 19px;
+}
