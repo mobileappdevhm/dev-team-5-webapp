@@ -6,10 +6,10 @@
 <div class="page-content row">
   <div class="col-md-12">
     <div class="no-favs" *ngIf="scheduleList.length <= 0">
-      <p>Hey {{username}}, you don't have any course on your schedule yet. <a routerLink="/welcome/courses">Add some now.</a> </p>
+      <p>Hey {{username}}, you don't have any course on your schedule yet. <a routerLink="/courses">Add some now.</a> </p>
     </div>
     <div>
-    
+
     </div>
 
     <div *ngFor="let sc of scheduleList">
@@ -22,7 +22,7 @@
           <div class="col-md-4">
             <em>{{ sc.CourseFaculty }}</em>
           </div>
-          <div class="col-md-4">  
+          <div class="col-md-4">
             <em>{{ sc.CourseDate|date:'short' }}</em>
           </div>
         </div>
