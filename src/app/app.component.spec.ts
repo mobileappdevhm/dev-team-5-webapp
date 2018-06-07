@@ -21,6 +21,8 @@ import { AgmCoreModule } from '@agm/core';
 import {APP_BASE_HREF} from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { LogoutComponent } from "./components/logout/logout.component";
+import { ContactComponent } from "./components/contact/contact.component";
+import { DescriptionComponent } from "./components/description/description.component";
 
 describe('Router: App', () => {
 
@@ -43,7 +45,9 @@ describe('Router: App', () => {
         LoginComponent,
         LogoutComponent,
         Welcome,
-        AppComponent
+        AppComponent,
+        ContactComponent,
+        DescriptionComponent
       ],
       imports: [
         AgmCoreModule.forRoot(),
