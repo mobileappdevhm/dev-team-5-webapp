@@ -10,10 +10,12 @@ import { LoginService } from '../../services/login/login.service';
 export class Welcome implements OnInit {
 
   username:any;
+  userId:any;
 
   constructor(private loginService: LoginService) { }
 
   ngOnInit() {
-    this.username = this.loginService.username;
+    this.username = this.loginService.user_firstname;
+    this.userId = this.loginService.userid;
   }
 }
