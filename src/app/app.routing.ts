@@ -11,6 +11,7 @@ import {ScheduleComponent} from "./components/schedule/schedule.component";
 import {FavoritesListComponent} from "./components/favorites-list/favorites-list.component";
 import {ContactComponent} from "./components/contact/contact.component";
 import {LogoutComponent} from "./components/logout/logout.component";
+import { DescriptionComponent } from './components/description/description.component';
 
 const appRoutes: Routes = [
 
@@ -63,6 +64,16 @@ const appRoutes: Routes = [
     path:'contact',
     component: ContactComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'courses/descriptions/:id',
+    component: DescriptionComponent,
+    // data: { title: 'Hilfe zum Login' }
+  },
+  {
+    path: 'favorites/descriptions/:id',
+    component: DescriptionComponent,
+    // data: { title: 'Hilfe zum Login' }
   },
 
   {path: '**', component: PageNotFoundComponent}

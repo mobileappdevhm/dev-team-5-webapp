@@ -23,6 +23,7 @@ import { ContactComponent } from "./components/contact/contact.component";
 import { AgmCoreModule } from '@agm/core';
 import { LogoutComponent } from './components/logout/logout.component';
 import { routing } from "./app.routing";
+import { DescriptionComponent } from './components/description/description.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { routing } from "./app.routing";
     CourseListComponent,
     FavoritesListComponent,
     ContactComponent,
-    LogoutComponent
+    LogoutComponent,
+    DescriptionComponent
   ],
   imports: [
     BrowserModule,
