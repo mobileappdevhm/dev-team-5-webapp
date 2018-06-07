@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit {
   constructor(private loginService: LoginService) { }
 
   ngOnInit() {
-    this.username = this.loginService.username;
+    this.username = this.loginService.user_firstname;
   }
 
 }

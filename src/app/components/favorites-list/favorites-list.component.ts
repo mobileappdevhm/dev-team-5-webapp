@@ -26,7 +26,7 @@ export class FavoritesListComponent implements OnInit {
 
 
   constructor(private http: HttpClient, private loginService: LoginService) {
-    this.username = this.loginService.username;
+    this.username = this.loginService.user_firstname;
   }
 
   getFavorites() {

@@ -29,36 +29,31 @@ const appRoutes: Routes = [
     // data: { title: 'Hilfe zum Login' }
   },
   {
-    path: 'login/welcome',
-    component: Welcome,
-    canActivate: [AuthGuard],
-  },
-  {
-    path: 'welcome/courses',
+    path: 'courses',
     component: CourseListComponent,
     canActivate: [AuthGuard]
     // data: { title: 'Hilfe zum Login' }
   },
   {
-    path: 'welcome/locations',
+    path: 'locations',
     component: LocationsComponent,
     canActivate: [AuthGuard]
     // data: { title: 'Hilfe zum Login' }
   },
   {
-    path: 'welcome/profile',
+    path: 'profile',
     component: ProfileComponent,
     canActivate: [AuthGuard]
     // data: { title: 'Hilfe zum Login' }
   },
   {
-    path: 'welcome/schedule',
+    path: 'schedule',
     component: ScheduleComponent,
     canActivate: [AuthGuard]
     // data: { title: 'Hilfe zum Login' }
   },
   {
-    path: 'welcome/favorites',
+    path: 'favorites',
     component: FavoritesListComponent,
     canActivate: [AuthGuard]
     // data: { title: 'Hilfe zum Login' }

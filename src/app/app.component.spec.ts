@@ -2,7 +2,7 @@ import {Location} from "@angular/common";
 import {TestBed, fakeAsync, tick} from '@angular/core/testing';
 import {RouterTestingModule} from "@angular/router/testing";
 import { Router, RouterModule, Routes } from "@angular/router";
-import { appRoutes } from "./app.module"
+import { routing } from "./app.routing"
 import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
@@ -39,17 +39,17 @@ describe('Router: App', () => {
         LocationsComponent,
         PageNotFoundComponent,
         FooterComponent,
-        NavbarComponent, 
+        NavbarComponent,
         LoginComponent,
         LogoutComponent,
         Welcome,
         AppComponent
       ],
-      imports: [ AgmCoreModule.forRoot(), FormsModule, RouterModule.forRoot(
-        appRoutes,
-        { enableTracing: false }
-      ), 
-      HttpClientModule
+      imports: [
+        AgmCoreModule.forRoot(),
+        FormsModule,
+        routing,
+        HttpClientModule
       ],
       providers: [{provide: APP_BASE_HREF, useValue : '/' }]
     });
@@ -71,10 +71,10 @@ describe('Router: App', () => {
     expect(done).toBeTruthy();
   }));
 
-  it('navigate to "" redirects you to /login', fakeAsync(() => {
+  it('navigate to "" redirects you to "", if not logged in', fakeAsync(() => {
     router.navigate(['']);
     tick(50);
-    expect(location.path()).toBe('/login');
+    expect(location.path()).toBe('');
   }));
 
   it('navigate to /login redirects you to /login', fakeAsync(() => {
@@ -89,40 +89,40 @@ describe('Router: App', () => {
     expect(location.path()).toBe('/logout');
   }));
 
-  it('navigate to /login/welcome redirects you to /login/welcome', fakeAsync(() => {
+  /*it('navigate to /login/welcome redirects you to /login/welcome', fakeAsync(() => {
     router.navigate(['/login/welcome']);
     tick(50);
     expect(location.path()).toBe('/login/welcome');
+  }));*/
+
+  it('navigate to /courses redirects you to /courses', fakeAsync(() => {
+    router.navigate(['/courses']);
+    tick(50);
+    expect(location.path()).toBe('/courses');
   }));
 
-  it('navigate to welcome/courses redirects you to welcome/courses', fakeAsync(() => {
-    router.navigate(['/welcome/courses']);
+  it('navigate to /favorites redirects you to /favorites', fakeAsync(() => {
+    router.navigate(['/favorites']);
     tick(50);
-    expect(location.path()).toBe('/welcome/courses');
+    expect(location.path()).toBe('/favorites');
   }));
 
-  it('navigate to welcome/favorites redirects you to welcome/favorites', fakeAsync(() => {
-    router.navigate(['/welcome/favorites']);
+  it('navigate to /locations redirects you to /locations', fakeAsync(() => {
+    router.navigate(['/locations']);
     tick(50);
-    expect(location.path()).toBe('/welcome/favorites');
+    expect(location.path()).toBe('/locations');
   }));
 
-  it('navigate to /welcome/locations redirects you to welcome/locations', fakeAsync(() => {
-    router.navigate(['/welcome/locations']);
+  it('navigate to /profile redirects you to /profile', fakeAsync(() => {
+    router.navigate(['/profile']);
     tick(50);
-    expect(location.path()).toBe('/welcome/locations');
+    expect(location.path()).toBe('/profile');
   }));
 
-  it('navigate to /welcome/profile redirects you to /welcome/profile', fakeAsync(() => {
-    router.navigate(['/welcome/profile']);
+  it('navigate to /schedule redirects you to /schedule', fakeAsync(() => {
+    router.navigate(['/schedule']);
     tick(50);
-    expect(location.path()).toBe('/welcome/profile');
-  }));
-
-  it('navigate to /welcome/schedule redirects you to /welcome/schedule', fakeAsync(() => {
-    router.navigate(['/welcome/schedule']);
-    tick(50);
-    expect(location.path()).toBe('/welcome/schedule');
+    expect(location.path()).toBe('/schedule');
   }));
 
   it('navigate to ** redirects you to **', fakeAsync(() => {
