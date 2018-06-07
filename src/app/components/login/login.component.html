@@ -1,14 +1,18 @@
 <div class="login">
+  <div class="alert alert-danger" role="alert" *ngIf="wrongPwOrUser">
+    Please check credentials. Username or password wrong.
+  </div>
   <div class="login-wrapper">
     <div class="input-element">
-      <span class="sr-only">Username</span> <input type="text" placeholder="Username" [(ngModel)]="username" (keyup)="checkLogin()">
+      <span class="sr-only">Username</span> <input type="text" placeholder="Username" [(ngModel)]="username" />
     </div>
     <div class="input-element">
-      <span class="sr-only">Password</span> <input type="password" placeholder="Password" [(ngModel)]="password" (keyup)="checkLogin()" />
+      <span class="sr-only">Password</span> <input type="password" placeholder="Password" [(ngModel)]="password" />
     </div>
     <div>
       <div class="input-element" >
-        <input class="btn btn__login" routerLink="/login/welcome" type="submit" value="Login" [disabled]="loginButtonState">
+        <input class="btn btn__login" type="submit" value="Login" (click)="checkLogin($event)" *ngIf="!loading" />
+        <div *ngIf="loading"><i class="fa fa-circle-o-notch fa-spin loading-indicator"></i></div>
         <span class="help small" *ngIf="showHelp">Please enter credentials to activate login button.</span>
         <div>
           <span class="help small" (click)="toggleHelp()"><a href="javascript:void(0);">{{!showHelp?'Help':'Hide help'}}</a></span>

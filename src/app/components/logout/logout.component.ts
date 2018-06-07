@@ -8,7 +8,7 @@ import { LoginService } from '../../services/login/login.service';
 })
 export class LogoutComponent implements OnInit {
 
-  tempUsername = this.loginServive.username;
+  tempUsername = this.loginServive.user_firstname;
 
   constructor(private loginServive: LoginService) { }
 

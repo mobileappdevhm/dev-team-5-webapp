@@ -21,65 +21,8 @@ import { FavoritesListComponent } from "./components/favorites-list/favorites-li
 
 import { AgmCoreModule } from '@agm/core';
 import { LogoutComponent } from './components/logout/logout.component';
+import { routing } from "./app.routing";
 
-export const appRoutes: Routes = [
-  {
-    path: 'login',
-    component: LoginComponent,
-    data: { title: 'Login' }
-  },
-  {
-    path: 'login/welcome',
-    component: Welcome,
-    data: { title: 'Hilfe zum Login' }
-  },
-  {
-    path: 'logout',
-    component: LogoutComponent,
-    // data: { title: 'Hilfe zum Login' }
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-    // data: { title: 'Hilfe zum Login' }
-  },
-  {
-    path: 'login/welcome',
-    component: NavbarComponent,
-    // data: { title: 'Hilfe zum Login' }
-  },
-
-  { path: '',
-    redirectTo: '/login',
-    pathMatch: 'full'
-  },
-  {
-    path: 'welcome/courses',
-    component: CourseListComponent,
-    // data: { title: 'Hilfe zum Login' }
-  },
-  {
-    path: 'welcome/locations',
-    component: LocationsComponent,
-    // data: { title: 'Hilfe zum Login' }
-  },
-  {
-    path: 'welcome/profile',
-    component: ProfileComponent,
-    // data: { title: 'Hilfe zum Login' }
-  },
-  {
-    path: 'welcome/schedule',
-    component: ScheduleComponent,
-    // data: { title: 'Hilfe zum Login' }
-  },
-  {
-    path: 'welcome/favorites',
-    component: FavoritesListComponent,
-    // data: { title: 'Hilfe zum Login' }
-  },
-  { path: '**', component: PageNotFoundComponent }
-];
 
 @NgModule({
   declarations: [
@@ -106,10 +49,7 @@ export const appRoutes: Routes = [
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDt7-VrmG9zjcZWa1yRkDP4hC6OgvtRx9Y'
     }),
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: false }
-    ),
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]

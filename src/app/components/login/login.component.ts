@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login/login.service';
 
 @Component({
@@ -14,22 +13,37 @@ export class LoginComponent implements OnInit {
   username:string;
   password:string;
   showHelp:boolean=false;
+  wrongPwOrUser:boolean=false;
+  loading:boolean = false;
 
   constructor( private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
 
-    if(this.loginService.username !== '') {
-      this.router.navigate(['/login/welcome']);
+    if (this.loginService.isUserLoggedIn()) {
+      //this.router.navigate(['/login/welcome']);
     }
 
   }
 
-  checkLogin(){
+  checkLogin(e){
+
+    e.preventDefault();
     this.loginButtonState = !(this.username !== '' && this.username !== undefined &&
       this.password !== '' && this.password !== undefined);
 
-    this.loginService.username = this.username;
+    this.loginService.login(this.username, this.password);
+
+    this.loading = true;
+    setTimeout(()=> {
+      if(this.loginService.isUserLoggedIn()) {
+        this.router.navigate(['/login/welcome']);
+      } else {
+        this.wrongPwOrUser = true;
+      }
+      this.loading = false;
+    }, 250);
+
   }
 
   toggleHelp() {
