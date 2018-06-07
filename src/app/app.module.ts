@@ -18,6 +18,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
 import { CourseListComponent } from "./components/course-list/course-list.component";
 import { FavoritesListComponent } from "./components/favorites-list/favorites-list.component";
+import { ContactComponent } from "./components/contact/contact.component";
 
 import { AgmCoreModule } from '@agm/core';
 import { LogoutComponent } from './components/logout/logout.component';
@@ -38,6 +39,7 @@ import { routing } from "./app.routing";
     WelcomePageComponent,
     CourseListComponent,
     FavoritesListComponent,
+    ContactComponent,
     LogoutComponent
   ],
   imports: [
