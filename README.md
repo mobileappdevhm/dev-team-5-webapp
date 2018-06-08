@@ -1,3 +1,6 @@
+[![Build Status](your travis url for the repo here.png)](https://travis-ci.org/mobileappdevhm/dev-team-5-webapp.svg?branch=master)
+
+
 # CiE
 
 ## First thing to do
