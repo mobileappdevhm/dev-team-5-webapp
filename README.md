@@ -3,7 +3,7 @@
 
 
 
-# CiE
+# - CiE -
 
 ## First thing to do
 To get familiar with our project check out [how to set up the project](https://github.com/mobileappdevhm/dev-team-5-webapp/wiki)
