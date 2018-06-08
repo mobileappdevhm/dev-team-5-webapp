@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mobileappdevhm/dev-team-5-webapp.svg?branch=master)](https://travis-ci.org/mobileappdevhm/dev-team-5-webapp.svg?branch=master)
+[![Build Status](https://travis-ci.org/mobileappdevhm/dev-team-5-webapp.svg?branch=master)](https://travis-ci.org/mobileappdevhm/dev-team-5-webapp)
 
 
 # CiE
