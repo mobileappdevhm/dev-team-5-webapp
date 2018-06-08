@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.org/mobileappdevhm/dev-team-5-webapp.svg?branch=master)](https://travis-ci.org/mobileappdevhm/dev-team-5-webapp) 
-
-[![Coverage Status](https://coveralls.io/repos/github/mobileappdevhm/dev-team-5-webapp/badge.svg?branch=master)](https://coveralls.io/github/mobileappdevhm/dev-team-5-webapp?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/mobileappdevhm/dev-team-5-webapp/badge.svg?branch=coveralls_branch)](https://coveralls.io/github/mobileappdevhm/dev-team-5-webapp?branch=coveralls_branch)
 
 
 
