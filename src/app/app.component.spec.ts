@@ -107,7 +107,7 @@ describe('Router: App', () => {
     expect(location.path()).toBe('/courses');
   }));
 
-  it('navigate to /security redirects you /security', fakeAsync(() => {
+  it('navigate to /security redirects you to /security', fakeAsync(() => {
     router.navigate(['/security']);
     tick(50);
     expect(location.path()).toBe('/security');
