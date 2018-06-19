@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LogoutComponent } from "./components/logout/logout.component";
 import { ContactComponent } from "./components/contact/contact.component";
 import { DescriptionComponent } from "./components/description/description.component";
+import { SecurityComponent } from './components/security/security.component';
 
 describe('Router: App', () => {
 
@@ -47,7 +48,8 @@ describe('Router: App', () => {
         Welcome,
         AppComponent,
         ContactComponent,
-        DescriptionComponent
+        DescriptionComponent,
+        SecurityComponent
       ],
       imports: [
         AgmCoreModule.forRoot(),
@@ -103,6 +105,12 @@ describe('Router: App', () => {
     router.navigate(['/courses']);
     tick(50);
     expect(location.path()).toBe('/courses');
+  }));
+
+  it('navigate to /security redirects you /security', fakeAsync(() => {
+    router.navigate(['/security']);
+    tick(50);
+    expect(location.path()).toBe('/security');
   }));
 
   it('navigate to /favorites redirects you to /favorites', fakeAsync(() => {
