@@ -12,6 +12,8 @@ import {FavoritesListComponent} from "./components/favorites-list/favorites-list
 import {ContactComponent} from "./components/contact/contact.component";
 import {LogoutComponent} from "./components/logout/logout.component";
 import { DescriptionComponent } from './components/description/description.component';
+import { SecurityComponent } from './components/security/security.component';
+
 
 const appRoutes: Routes = [
 
@@ -64,6 +66,10 @@ const appRoutes: Routes = [
     path:'contact',
     component: ContactComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path:'security',
+    component: SecurityComponent,
   },
   {
     path: 'courses/descriptions/:id',

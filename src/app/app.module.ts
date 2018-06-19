@@ -24,6 +24,7 @@ import { AgmCoreModule } from '@agm/core';
 import { LogoutComponent } from './components/logout/logout.component';
 import { routing } from "./app.routing";
 import { DescriptionComponent } from './components/description/description.component';
+import { SecurityComponent } from './components/security/security.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { DescriptionComponent } from './components/description/description.compo
     FavoritesListComponent,
     ContactComponent,
     LogoutComponent,
-    DescriptionComponent
+    DescriptionComponent,
+    SecurityComponent
   ],
   imports: [
     BrowserModule,
