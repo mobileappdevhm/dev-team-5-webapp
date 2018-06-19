@@ -6,7 +6,7 @@
 
 <div class="row course-elements">
   <div class="col-md-4 course-elements__wrapper" *ngFor="let cl of courseList">
-<!-- 
+<!--
     <app-description [myCourse]="cl">  </app-description> -->
     <!-- Hier Kurse filtern (Ampel) -->
     <div class="course-element" ngClass="{{cl.isCoterie == false && cl.hasHomeBias == false}}">
@@ -19,9 +19,8 @@
       </div>
     </div>
 
- 
+
 
   </div>
 </div>
 
-<app-navbar></app-navbar>
