@@ -4,7 +4,7 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LoginService } from '../../services/login/login.service';
 
-//import { SERVER_URL } from '../../app.constants';
+import { SERVER_URL } from '../../app.constants';
 import { DescriptionComponent } from '../description/description.component';
 import { DatePipe, formatDate } from '@angular/common';
 
@@ -19,8 +19,8 @@ export class FavoritesListComponent implements OnInit {
 
  
   // URLs for API Request
-  //readonly SERVER_URL ='http://10.179.6.101:3000';
-  readonly SERVER_URL = 'https://my-json-server.typicode.com/ShaggyBlanco/fakejsondb/courses';
+  readonly SERVER_URL ='http://10.179.6.101:3000';
+  //readonly SERVER_URL = 'https://my-json-server.typicode.com/ShaggyBlanco/fakejsondb/courses';
 
   // letiables
   favorites: Observable<Favorites[]>
@@ -40,8 +40,8 @@ export class FavoritesListComponent implements OnInit {
   getFavorites() {
     this.favList = [];
 
-    //this.http.get(SERVER_URL + '/Course').subscribe(data => {
-      this.http.get(this.SERVER_URL).subscribe(data => {
+    this.http.get(SERVER_URL + '/Course').subscribe(data => {
+      //this.http.get(this.SERVER_URL).subscribe(data => {
 
       for (let key in data) {
         if(data.hasOwnProperty(key)) {
