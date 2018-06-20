@@ -6,6 +6,16 @@ export class AppPage {
   }
 
   getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+    return element(by.css('h1')).getText();
+  }
+}
+
+export class LocationsPage {
+  navigateTo() {
+    return browser.get('/locations');
+  }
+
+  getParagraphText() {
+    return element(by.css('h1')).getText();
   }
 }

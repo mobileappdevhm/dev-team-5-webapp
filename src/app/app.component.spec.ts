@@ -1,8 +1,8 @@
-import {Location} from "@angular/common";
+import {Location} from '@angular/common';
 import {TestBed, fakeAsync, tick} from '@angular/core/testing';
-import {RouterTestingModule} from "@angular/router/testing";
-import { Router, RouterModule, Routes } from "@angular/router";
-import { routing } from "./app.routing"
+import {RouterTestingModule} from '@angular/router/testing';
+import { Router, RouterModule, Routes } from '@angular/router';
+import { routing } from './app.routing';
 import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
@@ -15,7 +15,7 @@ import { LocationsComponent } from './components/locations/locations.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
-import { CourseListComponent } from "./components/course-list/course-list.component";
+import { CourseListComponent } from './components/course-list/course-list.component';
 import { FavoritesListComponent } from './components/favorites-list/favorites-list.component';
 import { AgmCoreModule } from '@agm/core';
 import {APP_BASE_HREF} from '@angular/common';

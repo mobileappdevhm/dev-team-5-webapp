@@ -1,3 +1,6 @@
+h1 {
+  font: bolder;
+}
 
 agm-map {
   width: 100%;
@@ -11,4 +14,3 @@ agm-map {
 .single-map-element h2 {
   margin: 20px 0 30px 0;
 }
-
