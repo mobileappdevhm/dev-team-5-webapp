@@ -2,48 +2,40 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { IUser } from './IUser';
-import { API_LOGIN } from "../../app.constants";
+import { API_LOGIN } from '../../app.constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  private _userid:string = '';
-  private _user_firstname:string = '';
-  private _user_lastname:string = '';
-  private _user_curriculum:string = '';
+  private _userid = '';
+  private _user_firstname = '';
+  private _user_lastname = '';
+  private _user_curriculum = '';
 
-
-  userData:IUser;
-  loggedIn:boolean = false;
-
+  userData: IUser;
+  loggedIn = false;
 
   constructor( private http: HttpClient ) { }
 
-
-
   saveToLocalStorage(key, data) {
 
-    if(typeof data !== "string") {
+    if (typeof data !== 'string') {
       data = JSON.stringify(data);
     }
     sessionStorage.setItem(key, data);
   }
 
-  getfromLocalStorage(key){
+  getfromLocalStorage(key) {
 
-    let data = sessionStorage.getItem(key);
-    try
-    {
+    const data = sessionStorage.getItem(key);
+    try {
       return JSON.parse(data);
-    }
-    catch(e)
-    {
+    } catch (e) {
       return data;
     }
   }
-
 
   login(username, password) {
 
@@ -52,8 +44,8 @@ export class LoginService {
       password: password
     };
 
-    this.http.post(API_LOGIN, requestBody).subscribe( (result:IUser) => {
-      if(result.user !== null) {
+    this.http.post(API_LOGIN, requestBody).subscribe( (result: IUser) => {
+      if (result.user !== null) {
         this.userData = result;
         this.loggedIn = true;
         this.saveToLocalStorage('userData', this.userData);
@@ -69,11 +61,13 @@ export class LoginService {
     });
   }
 
-  isUserLoggedIn(){
-    return sessionStorage.getItem('userid') !== '' && sessionStorage.getItem('userid') !== undefined && sessionStorage.getItem('userid') !== null;
+  isUserLoggedIn() {
+    return sessionStorage.getItem('userid') !== '' &&
+      sessionStorage.getItem('userid') !== undefined &&
+      sessionStorage.getItem('userid') !== null;
   }
 
-  logout(){
+  logout() {
     sessionStorage.clear();
   }
 

@@ -4,12 +4,11 @@
 
 <div class="row contact-elements">
   <div class="col-md-4 contact-elements__wrapper" *ngFor="let contacts of getFacURLs(); let i = index">
-      <a href="{{ contacts }}" target="_blank"> 
+      <a href="{{ contacts }}" target="_blank">
         <div class="contact-element">
            <span *ngIf="i >= 9; else elseBlock"> {{ 'Faculty ' + (i + 1) }} </span>
-           <ng-template #elseBlock> {{ 'Faculty 0' + (i + 1) }} </ng-template>                        
+           <ng-template #elseBlock> {{ 'Faculty 0' + (i + 1) }} </ng-template>
         </div>
-      </a> 
-  </div> 
+      </a>
+  </div>
 </div>
- <app-navbar></app-navbar>

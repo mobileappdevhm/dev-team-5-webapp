@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LoginService} from '../../services/login/login.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,15 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  menuCheckbox:boolean=false;
+  // menuCheckbox:boolean=false;
+  collapse = 'closed';
+  showNavBar = true;
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
+    this.showNavBar = this.loginService.isUserLoggedIn();
   }
 
-  menuChanged() {
-      this.menuCheckbox=false;
+  toggleCollapse() {
+    this.collapse = this.collapse === 'open' ? 'closed' : 'open';
   }
 
 }
