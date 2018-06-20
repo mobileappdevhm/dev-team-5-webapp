@@ -16,13 +16,13 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
 import { CourseListComponent } from "./components/course-list/course-list.component";
-import { FavoritesListComponent } from "./components/favorites-list/favorites-list.component";
+import { FavoritesListComponent } from './components/favorites-list/favorites-list.component';
 import { AgmCoreModule } from '@agm/core';
 import {APP_BASE_HREF} from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { LogoutComponent } from "./components/logout/logout.component";
-import { ContactComponent } from "./components/contact/contact.component";
-import { DescriptionComponent } from "./components/description/description.component";
+import { LogoutComponent } from './components/logout/logout.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { DescriptionComponent } from './components/description/description.component';
 import { SecurityComponent } from './components/security/security.component';
 
 describe('Router: App', () => {
