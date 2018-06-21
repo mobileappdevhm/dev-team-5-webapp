@@ -14,7 +14,7 @@ export class LoginPage {
           // Find page elements
           var userNameField = browser.driver.findElement(by.id("user"));
           var userPassField = browser.driver.findElement(by.id("pass"));
-          // var userLoginBtn  = browser.driver.findElement(by.id('loginbtn'));
+          var userLoginBtn  = browser.driver.findElement(by.id("log"));
     
 
           userNameField.click();
@@ -31,10 +31,12 @@ export class LoginPage {
           expect(userPassField.getAttribute("value")).toEqual("Test1234!");
     
           // Click to sign in - waiting for Angular as it is manually bootstrapped.
-          // userLoginBtn.click().then(function a() {
-          //   browser.waitForAngular();
-          //   expect(browser.driver.getCurrentUrl()).toMatch('/');
-          // }, 10000);
+          userLoginBtn.click();
+
+      //     return browser.driver.wait(function() {
+      //       browser.waitForAngular();
+      //       expect(browser.driver.getCurrentUrl()).toMatch('/');
+      // }, 10000)
   }
 }
 
