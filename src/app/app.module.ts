@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from "@angular/forms";
 import { AngularFontAwesomeModule } from "angular-font-awesome";
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -53,7 +55,8 @@ import { DescriptionComponent } from './components/description/description.compo
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDt7-VrmG9zjcZWa1yRkDP4hC6OgvtRx9Y'
     }),
-    routing
+    routing,
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
