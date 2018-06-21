@@ -92,8 +92,22 @@ export class DescriptionComponent implements OnInit {
   }
 
   
-  getDates(): string {
-    return this.selectedCourse.dates[0].begin;
+  getDates(): Date {
+    // example for param: "20180321T164500Z";
+    let year = this.selectedCourse.dates[0].begin.substring(0, 4);
+    let month =this.selectedCourse.dates[0].begin.substring(4, 6);
+    let day = this.selectedCourse.dates[0].begin.substring(6, 8);
+    let hour = this.selectedCourse.dates[0].begin.substring(9, 11);
+    let minute = this.selectedCourse.dates[0].begin.substring(11, 13);
+    let seconds = this.selectedCourse.dates[0].begin.substring(13, 15);
+
+    // concatenate substrings above to a date string with format 'yyyy-mm-ddTHH:mm:ss'
+    let res = year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + seconds;
+
+    // create a Date object from 'res' string
+    let date = new Date(res);
+
+    return date;
   }
 
   getDescriptions(): any {

@@ -5,6 +5,10 @@ export class Favorites {
   CourseName: string;
   CourseFaculty: string;     //number,
   id: number;
+  CourseLocation: string;
+  CourseStart: string;
+  CourseEnd: string;
+
   
 //   CourseLecturer: string;
 //   CourseStatus: string;
@@ -15,3 +19,4 @@ export class Favorites {
 
 
 }
+
