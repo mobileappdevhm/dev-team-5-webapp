@@ -3,14 +3,14 @@ import {TestBed, fakeAsync, tick} from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
 import { Router, RouterModule, Routes } from '@angular/router';
 import { routing } from './app.routing';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './components/login/login.component';
 import { Welcome } from './components/welcome/welcome';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent} from "./components/footer/footer.component";
+import { FooterComponent} from './components/footer/footer.component';
 import { LocationsComponent } from './components/locations/locations.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { ProfileComponent } from './components/profile/profile.component';
