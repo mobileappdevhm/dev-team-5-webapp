@@ -107,6 +107,8 @@ export class FavoritesListComponent implements OnInit {
       }
       this.x = this.x + 1;
     }
+    // ***********************************************************************
+
 
     this.favLoth.sort(function(a,b) {
       return (a.start > b.end) ? 1 : ((b.start > a.start) ? -1 : 0);

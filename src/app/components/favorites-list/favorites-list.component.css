@@ -42,7 +42,10 @@
 /* Popup container */
 .popup {
     position: relative;
+<<<<<<< HEAD
     background-color: rgb(240, 0, 0);
+=======
+>>>>>>> 206b086301b5c1b201ba07d09ef426df6988ebc4
     display: inline-block;
     cursor: pointer;
 }
@@ -91,4 +94,8 @@
 @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity:1 ;}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 206b086301b5c1b201ba07d09ef426df6988ebc4
