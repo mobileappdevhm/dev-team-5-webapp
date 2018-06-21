@@ -30,13 +30,14 @@
 
     </div>
 
+    <div class="popup"  (click)="checkTimeConflict()" *ngIf="favList.length > 0"> Time Conflicts?
+      <span class="popuptext" id="myPopup">DAS IST EIN TEST.</span>
+    </div>
 
   </div>
 
 </div>
 
-<div>
-    <button (click)="checkTimeConflict()">Time Conflict?</button>
-</div>
+
 
 <app-navbar></app-navbar>
