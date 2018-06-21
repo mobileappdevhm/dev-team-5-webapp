@@ -14,17 +14,19 @@ describe('workspace-project App', () => {
 
   it('should display login header', () => {
     logPage.navigateTo();
-    expect(logPage.getParagraphText()).toEqual('Hallo');
+    expect(logPage.getParagraphText()).toEqual('Welcome to CiE');
   });
   
   it('should login', () => {
     logPage.navigateTo();
     logPage.doLogin();
   });
+
   // it('should display welcome message', () => {
   //   page.navigateTo();
   //   expect(page.getParagraphText()).toEqual('Welcome to CiE');
   // });
+
   // it('should display locations header', () => {
   //   locPage.navigateTo();
   //   expect(locPage.getParagraphText()).toEqual('Campus Locations');
