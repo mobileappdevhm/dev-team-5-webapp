@@ -25,12 +25,10 @@ describe('workspace-project App', () => {
   //   page.navigateTo();
   //   expect(page.getParagraphText()).toEqual('Welcome to CiE');
   // });
-
   // it('should display locations header', () => {
   //   locPage.navigateTo();
   //   expect(locPage.getParagraphText()).toEqual('Campus Locations');
   // });
-
 
 
 });

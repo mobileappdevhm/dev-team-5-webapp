@@ -11,27 +11,25 @@ export class LoginPage {
   }
 
   doLogin() {
-          // Find page elements
-          var userNameField = browser.driver.findElement(by.id("user"));
-          var userPassField = browser.driver.findElement(by.id("pass"));
-          var userLoginBtn  = browser.driver.findElement(by.id("log"));
+
+    // Find page elements
+    var userNameField = browser.driver.findElement(by.id("user"));
+    var userPassField = browser.driver.findElement(by.id("pass"));
+    var userLoginBtn  = browser.driver.findElement(by.id("log"));
     
+    userNameField.click();
 
-          userNameField.click();
+    // Fill input fields
+    userNameField.sendKeys("massad@hm.edu");
+    userPassField.click();
+    userPassField.sendKeys("Test1234!");
 
-          // Fill input fields
-          userNameField.sendKeys("massad@hm.edu");
-
-          userPassField.click();
-
-          userPassField.sendKeys("Test1234!");
-
-          // Ensure fields contain what we've entered
-          expect(userNameField.getAttribute("value")).toEqual("massad@hm.edu");
-          expect(userPassField.getAttribute("value")).toEqual("Test1234!");
+    // Ensure fields contain what we've entered
+    expect(userNameField.getAttribute("value")).toEqual("massad@hm.edu");
+    expect(userPassField.getAttribute("value")).toEqual("Test1234!");
     
-          // Click to sign in - waiting for Angular as it is manually bootstrapped.
-          userLoginBtn.click();
+    // Click to sign in - waiting for Angular as it is manually bootstrapped.
+    userLoginBtn.click();
 
       //     return browser.driver.wait(function() {
       //       browser.waitForAngular();
@@ -42,7 +40,7 @@ export class LoginPage {
 
 export class AppPage {
   navigateTo() {
-    return browser.get('/');
+    return browser.get('');
   }
 
   getParagraphText() {
@@ -52,7 +50,7 @@ export class AppPage {
 
 export class LocationsPage {
   navigateTo() {
-    return browser.get('/locations');
+    return browser.get('locations');
   }
 
   getParagraphText() {

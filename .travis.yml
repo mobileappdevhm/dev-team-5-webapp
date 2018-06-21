@@ -29,6 +29,8 @@ script:
 - ng build
 # run tests
 - ng test --karma-config src/karma.conf.js
+#- ng e2e
+#- npm run e2e
 - npm run test:cover
 
 after_success:
