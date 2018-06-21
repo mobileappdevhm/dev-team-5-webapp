@@ -5,12 +5,13 @@
 
 
 <!-- <button (click)="getFaculty()">Get Departments</button> -->
-
 <div class="page-content row">
   <div class="col-md-12">
     <div class="no-favs" *ngIf="favList.length <= 0">
       <p>Hey {{username}}, you don't have any favorites yet. <a routerLink="/courses">Add some now.</a> </p>
     </div>
+
+    <button class="btn btn-danger" style="display: block; margin: 0 auto" (click)="openVerticallyCentered(content);checkTimeConflict()" *ngIf="favList.length > 0">Check for time conflict</button>
 
     <div *ngFor="let fv of favList">
 
@@ -23,14 +24,44 @@
             <em>{{ fv.CourseFaculty }}</em>
           </div>
           <div class="col-md-4">
-            <button class=" btn btn-danger" (click)="rmFromFav(fv)"> <i class="fa fa-heart"></i> Delete</button>
+            <button class="btn btn-danger" (click)="rmFromFav(fv)"> <i class="fa fa-heart"></i> Delete</button>
           </div>
         </div>
       </div>
 
     </div>
 
+<<<<<<< HEAD
+    <!-- <div class="btn btn-lg btn-danger"  (click)="checkTimeConflict()" data-toggle="popover" title="Reports" data-content="hello" *ngIf="favList.length > 0"> Time Conflicts?</div> -->
+    
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header">
+          <h4 class="modal-title">Reports</h4>
+          <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" *ngFor="let rp of report">
+            <ul style="list-style-type:circle">
+                <li>{{ rp }}</li>
+              </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" (click)="c('Close click')">Close</button>
+        </div>
+    </ng-template>
+
+    
+=======
+    <div class="popup"  (click)="checkTimeConflict()" *ngIf="favList.length > 0"> Time Conflicts?
+      <span class="popuptext" id="myPopup">DAS IST EIN TEST.</span>
+    </div>
+>>>>>>> 206b086301b5c1b201ba07d09ef426df6988ebc4
 
   </div>
 
 </div>
+
+
+
+<app-navbar></app-navbar>
