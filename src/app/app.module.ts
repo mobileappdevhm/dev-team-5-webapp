@@ -21,6 +21,7 @@ import { WelcomePageComponent } from './components/welcome-page/welcome-page.com
 import { CourseListComponent } from "./components/course-list/course-list.component";
 import { FavoritesListComponent } from "./components/favorites-list/favorites-list.component";
 import { ContactComponent } from "./components/contact/contact.component";
+import { SecurityComponent } from'./components/security/security.component';
 
 import { AgmCoreModule } from '@agm/core';
 import { LogoutComponent } from './components/logout/logout.component';
@@ -44,7 +45,8 @@ import { DescriptionComponent } from './components/description/description.compo
     FavoritesListComponent,
     ContactComponent,
     LogoutComponent,
-    DescriptionComponent
+    DescriptionComponent,
+    SecurityComponent
   ],
   imports: [
     BrowserModule,
