@@ -44,7 +44,8 @@ import { SecurityComponent } from './components/security/security.component';
     FavoritesListComponent,
     ContactComponent,
     LogoutComponent,
-    DescriptionComponent
+    DescriptionComponent,
+    SecurityComponent
   ],
   imports: [
     BrowserModule,
