@@ -22,8 +22,8 @@ export class FavoritesListComponent implements OnInit {
 
 
   // URLs for API Request
-  readonly SERVER_URL = 'http://10.179.9.3:3000';
-  //readonly SERVER_URL = 'https://my-json-server.typicode.com/ShaggyBlanco/fakejsondb/courses';
+  //readonly SERVER_URL = 'http://10.179.9.3:3000';
+  readonly SERVER_URL = 'https://my-json-server.typicode.com/ShaggyBlanco/fakejsondb/courses';
 
   // letiables
   favorites: Observable<Favorites[]>
@@ -52,8 +52,8 @@ export class FavoritesListComponent implements OnInit {
   getFavorites() {
     this.favList = [];
 
-    this.http.get(this.SERVER_URL + '/Course').subscribe(data => {
-      //this.http.get(this.SERVER_URL).subscribe(data => {
+    //this.http.get(this.SERVER_URL + '/Course').subscribe(data => {
+      this.http.get(this.SERVER_URL).subscribe(data => {
 
       for (let key in data) {
         if (data.hasOwnProperty(key)) {
