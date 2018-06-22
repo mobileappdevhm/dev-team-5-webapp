@@ -8,12 +8,12 @@ import { LoginService } from '../../services/login/login.service';
 })
 export class LogoutComponent implements OnInit {
 
-  tempUsername = this.loginServive.user_firstname;
+  tempUsername = this.loginService.user_firstname;
 
-  constructor(private loginServive: LoginService) { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit() {
-    this.loginServive.logout();
+    this.loginService.logout();
   }
 
 }
