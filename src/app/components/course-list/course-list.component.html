@@ -5,6 +5,7 @@
 <!-- <button (click)="getFaculty()">Get Departments</button> -->
 
 <div class="row course-elements">
+  <div *ngIf="loading" class="loading-indicator-wrapper"><i class="fa fa-circle-o-notch fa-spin loading-indicator"></i></div>
   <div class="col-md-4 course-elements__wrapper" *ngFor="let cl of courseList">
 <!--
     <app-description [myCourse]="cl">  </app-description> -->
@@ -18,9 +19,6 @@
 
       </div>
     </div>
-
-
-
   </div>
 </div>
 

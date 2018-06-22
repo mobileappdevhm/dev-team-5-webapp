@@ -95,5 +95,16 @@
 .no-classes {
   background-color: #ccc;
   cursor: no-drop;
+}
 
+.loading-indicator-wrapper {
+  width: 100%;
+}
+
+.loading-indicator {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
 }
