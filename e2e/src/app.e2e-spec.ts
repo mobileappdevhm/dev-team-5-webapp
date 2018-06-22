@@ -22,14 +22,14 @@ describe('workspace-project App', () => {
     logPage.doLogin();
   });
 
-  // it('should display welcome message', () => {
-  //   page.navigateTo();
-  //   expect(page.getParagraphText()).toEqual('Welcome to CiE');
-  // });
+  it('should display welcome message', () => {
+    page.navigateTo();
+    expect(page.getParagraphText()).toEqual('Welcome to CiE');
+  });
 
   // it('should display locations header', () => {
   //   locPage.navigateTo();
-  //   expect(locPage.getParagraphText()).toEqual('Campus Locations');
+  //   expect(locPage.getParagraphText()).toEqual('Campus locations');
   // });
 
 

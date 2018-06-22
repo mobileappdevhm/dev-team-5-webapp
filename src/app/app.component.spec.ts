@@ -1,7 +1,7 @@
 import {Location} from "@angular/common";
 import {TestBed, fakeAsync, tick} from '@angular/core/testing';
 import {RouterTestingModule} from "@angular/router/testing";
-import { Router, RouterModule, Routes } from "@angular/router";
+import { Router, RouterModule, Routes, NavigationEnd } from "@angular/router";
 import { routing } from "./app.routing"
 import { FormsModule } from "@angular/forms";
 
@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LogoutComponent } from "./components/logout/logout.component";
 import { ContactComponent } from "./components/contact/contact.component";
 import { DescriptionComponent } from "./components/description/description.component";
+import { SecurityComponent } from "./components/security/security.component";
 
 describe('Router: App', () => {
 
@@ -47,7 +48,9 @@ describe('Router: App', () => {
         Welcome,
         AppComponent,
         ContactComponent,
-        DescriptionComponent
+        DescriptionComponent,
+        SecurityComponent,
+      
       ],
       imports: [
         AgmCoreModule.forRoot(),
@@ -61,6 +64,10 @@ describe('Router: App', () => {
     router = TestBed.get(Router);
     location = TestBed.get(Location);
 
+    (<any>window).ga = jasmine.createSpy('ga');
+
+
+    
     fixture = TestBed.createComponent(AppComponent);
 
   });
