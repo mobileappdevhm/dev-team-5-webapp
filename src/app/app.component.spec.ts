@@ -29,6 +29,7 @@ describe('Router: App', () => {
 
   let location: Location;
   let router: Router;
+  let loger: LoginComponent;
   let fixture;
 
   beforeEach(() => {
@@ -63,12 +64,13 @@ describe('Router: App', () => {
 
     router = TestBed.get(Router);
     location = TestBed.get(Location);
+    loger = TestBed.get(LoginComponent);
 
     (<any>window).ga = jasmine.createSpy('ga');
 
 
-    
     fixture = TestBed.createComponent(AppComponent);
+    
 
   });
 
@@ -141,5 +143,4 @@ describe('Router: App', () => {
     tick(50);
     expect(location.path()).toBe('/**');
   }));
-
 });
