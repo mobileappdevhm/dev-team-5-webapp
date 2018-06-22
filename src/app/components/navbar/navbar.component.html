@@ -1,50 +1,39 @@
-<div class="nav-container"></div>
-<label>
 
-  <input type="checkbox" [(ngModel)]="menuCheckbox">
-  <div class="menu" ngClass="{{ menuCheckbox ? 'menu-bg' : ''}}">
-    <span class="hamburger"></span>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" *ngIf="showNavBar">
+  <a class="navbar-brand" href="#">CiE</a>
+  <button class="navbar-toggler" (click)="toggleCollapse()" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngClass]="collapse">
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/"><i class="fa fa-home"></i> Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/courses"><i class="fa fa-pencil"></i> Courses</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/favorites"><i class="fa fa-heart"></i> Favorites</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/locations"><i class="fa fa-map-marker"></i> Locations</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/schedule"><i class="fa fa-calendar"></i> Schedule</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/profile"><i class="fa fa-user-circle"></i> Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/contact"><i class="fa fa-phone"></i> Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/logout"><i class="fa fa-lock"></i> Logout</a>
+      </li>
+
+    </ul>
   </div>
-
-  <ul *ngIf="menuCheckbox" class="nav-container__list" (click)="menuChanged()">
-    <li class="nav-container__listitem">
-      <a routerLink="/">
-        <i class="fa fa-home"></i> Home
-      </a>
-    </li>
-    <li class="nav-container__listitem">
-      <a routerLink="/courses">
-        <i class="fa fa-pencil"></i> Courses
-      </a>
-    </li>
-    <li class="nav-container__listitem">
-      <a routerLink="/favorites">
-        <i class="fa fa-heart"></i> Favorites
-      </a>
-    </li>
-    <li class="nav-container__listitem">
-      <a routerLink="/locations">
-        <i class="fa fa-map-marker"></i> Locations
-      </a>
-    </li>
-    <li class="nav-container__listitem">
-      <a routerLink="/schedule">
-        <i class="fa fa-calendar"></i> Schedule
-      </a>
-    </li>
-    <li class="nav-container__listitem">
-      <a routerLink="/profile">
-        <i class="fa fa-user-circle"></i> Profile
-      </a>
-    </li>
-    <li class="nav-container__listitem">
-      <a routerLink="/contact">
-        <i class="fa fa-phone"></i> Contact
-      </a>
-    </li>
-    <li class="nav-container__listitem">
-      <a routerLink="/logout">
-        <i class="fa fa-lock"></i> Logout
-      </a>
-  </ul>
-</label>
+</nav>
