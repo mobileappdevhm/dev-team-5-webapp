@@ -40,7 +40,7 @@ export class LoginPage {
 
 export class AppPage {
   navigateTo() {
-    return browser.get('');
+    return browser.get('/');
   }
 
   getParagraphText() {
@@ -50,12 +50,10 @@ export class AppPage {
 
 export class LocationsPage {
   navigateTo() {
-    return browser.get('locations');
+    return browser.get('/locations');
   }
 
   getParagraphText() {
     return element(by.css('h1')).getText();
   }
 }
-
-
