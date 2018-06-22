@@ -16,19 +16,19 @@ import { DescriptionComponent } from '../description/description.component';
 
 export class FavoritesListComponent implements OnInit {
 
- 
+
   // URLs for API Request
-  readonly SERVER_URL ='http://10.179.6.101:3000';
+  readonly SERVER_URL = SERVER_URL;
 
   // Variables
-  favorites: Observable<Favorites[]>
+  favorites: Observable<Favorites[]>;
   favList: Favorites[] = [];
 
-  username:any = '';
+  username: any = '';
 
 
   constructor(private http: HttpClient, private loginService: LoginService) {
-   
+
   }
 
   getFavorites() {
@@ -36,22 +36,22 @@ export class FavoritesListComponent implements OnInit {
 
     this.http.get(SERVER_URL + '/Course').subscribe(data => {
 
-      for (let key in data) {
-        if(data.hasOwnProperty(key)) {
+      for (const key in data) {
+        if (data.hasOwnProperty(key)) {
           this.favList.push(data[key]);
         }
-      };
+      }
     });
   }
 
-  rmFromFav(param: Favorites){
+  rmFromFav(param: Favorites) {
 
     this.http.delete(SERVER_URL + '/Course/' + param.id)
       .subscribe(res => {
           console.log(res);
           this.getFavorites();
         },
-        err => {console.log("Error occured!");
+        err => {console.log('Error occured!');
         });
 
 
@@ -59,8 +59,8 @@ export class FavoritesListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getFavorites()
-    //this.desc.getDetails()
+    this.getFavorites();
+    // this.desc.getDetails()
   }
 }
 

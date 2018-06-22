@@ -1,11 +1,9 @@
 export class Favorites {
-
-
   CourseId: string;
   CourseName: string;
-  CourseFaculty: string;     //number,
+  CourseFaculty: string;
   id: number;
-  
+
 //   CourseLecturer: string;
 //   CourseStatus: string;
 //   CourseDescription: string;

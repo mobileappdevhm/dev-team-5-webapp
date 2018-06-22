@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 import { LoginService } from '../../services/login/login.service';
 
 @Component({
@@ -9,40 +9,50 @@ import { LoginService } from '../../services/login/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginButtonState:boolean=true;
-  username:string;
-  password:string;
-  showHelp:boolean=false;
-  wrongPwOrUser:boolean=false;
-  loading:boolean = false;
+  loginButtonState = true;
+  username: string;
+  password: string;
+  showHelp = false;
+  wrongPwOrUser = false;
+  loading = false;
+  loggedIn = false;
 
   constructor( private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
 
-    if (this.loginService.isUserLoggedIn()) {
-      //this.router.navigate(['/login/welcome']);
-    }
-
   }
 
-  checkLogin(e){
+  checkLogin(e) {
 
     e.preventDefault();
+
     this.loginButtonState = !(this.username !== '' && this.username !== undefined &&
       this.password !== '' && this.password !== undefined);
 
     this.loginService.login(this.username, this.password);
 
     this.loading = true;
-    setTimeout(()=> {
-      if(this.loginService.isUserLoggedIn()) {
+
+    this.loginService.isUserLoggedIn().subscribe((result) => {
+      if (result) {
         this.router.navigate(['/']);
       } else {
         this.wrongPwOrUser = true;
       }
       this.loading = false;
-    }, 250);
+    });
+
+
+
+   /* setTimeout(() => {
+      if (this.loginService.isUserLoggedIn()) {
+        this.router.navigate(['/']);
+      } else {
+        this.wrongPwOrUser = true;
+      }
+      this.loading = false;
+    }, 250); */
 
   }
 
