@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable, Output} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { IUser } from './IUser';
 import { API_LOGIN } from '../../app.constants';
+import {Observable, Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +16,11 @@ export class LoginService {
   private _user_curriculum = '';
 
   userData: IUser;
-  loggedIn = false;
+  private loggedIn = new Subject<any>();
 
-  constructor( private http: HttpClient ) { }
+  constructor( private http: HttpClient ) {
+
+  }
 
   saveToLocalStorage(key, data) {
 
@@ -47,27 +50,31 @@ export class LoginService {
     this.http.post(API_LOGIN, requestBody).subscribe( (result: IUser) => {
       if (result.user !== null) {
         this.userData = result;
-        this.loggedIn = true;
         this.saveToLocalStorage('userData', this.userData);
         this.userid = this.userData.user.id;
         this.user_firstname = this.userData.user.firstName;
         this.user_lastname = this.userData.user.lastName;
         this.user_curriculum = this.userData.curriculum;
+        this.loggedIn.next(true);
       } else {
         this.saveToLocalStorage('userData', this.userData);
         this.userData = null;
-        this.loggedIn = false;
+        this.loggedIn.next(false);
       }
     });
   }
 
   isUserLoggedIn() {
-    return sessionStorage.getItem('userid') !== '' &&
+    this.loggedIn.next(sessionStorage.getItem('userid') !== '' &&
       sessionStorage.getItem('userid') !== undefined &&
-      sessionStorage.getItem('userid') !== null;
+      sessionStorage.getItem('userid') !== null);
+
+    return this.loggedIn.asObservable();
+
   }
 
   logout() {
+    this.loggedIn.next(false);
     sessionStorage.clear();
   }
 
