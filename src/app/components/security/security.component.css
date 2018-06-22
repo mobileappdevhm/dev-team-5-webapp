@@ -1,9 +1,10 @@
+
 h1 {
     text-align: center;
 }
 
 h2 {
-    font: bolder;
+    font-weight: bolder;
 }
 
 a {

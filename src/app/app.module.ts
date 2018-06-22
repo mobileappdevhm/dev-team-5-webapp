@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { WelcomePageComponent } from './components/welcome-page/welcome-page.com
 import { CourseListComponent } from './components/course-list/course-list.component';
 import { FavoritesListComponent } from './components/favorites-list/favorites-list.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { SecurityComponent } from './components/security/security.component';
 
 import { AgmCoreModule } from '@agm/core';
 import { LogoutComponent } from './components/logout/logout.component';
@@ -55,7 +57,8 @@ import { SecurityComponent } from './components/security/security.component';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDt7-VrmG9zjcZWa1yRkDP4hC6OgvtRx9Y'
     }),
-    routing
+    routing,
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

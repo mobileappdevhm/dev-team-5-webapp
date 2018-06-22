@@ -87,7 +87,10 @@ export class CourseListComponent implements OnInit {
 
       CourseId: param.id,
       CourseName: param.name,
-      CourseFaculty: param.shortName
+      CourseFaculty: param.shortName,
+      CourseLocation: param.dates[0].rooms[0].campus,
+      CourseStart: param.dates[0].begin,
+      CourseEnd: param.dates[0].end
 
 
     })
