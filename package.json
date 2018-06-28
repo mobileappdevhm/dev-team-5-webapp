@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "optimized-build": "ng build --prod --build-optimizer",
     "test": "ng test",
     "test:cover": "rm -rf ./coverage && ng test --no-watch --code-coverage",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
