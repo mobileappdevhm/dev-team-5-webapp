@@ -12,10 +12,14 @@ export class NavbarComponent implements OnInit {
   collapse = 'closed';
   showNavBar = true;
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService) {
+
+  }
 
   ngOnInit() {
-    this.showNavBar = this.loginService.isUserLoggedIn();
+    this.loginService.isUserLoggedIn().subscribe((result) => {
+      this.showNavBar = result;
+    });
   }
 
   toggleCollapse() {

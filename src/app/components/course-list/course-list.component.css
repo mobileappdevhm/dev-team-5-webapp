@@ -71,7 +71,7 @@
   background-color: rgba(255,255,255,0.6);
   text-align: center;
   padding: 40px;
-  margin: 20px 0px;
+  margin: 20px 0;
   border: 1px solid #aaa;
   border-radius: 12px;
   cursor: pointer;
@@ -95,5 +95,16 @@
 .no-classes {
   background-color: #ccc;
   cursor: no-drop;
+}
 
+.loading-indicator-wrapper {
+  width: 100%;
+}
+
+.loading-indicator {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
 }

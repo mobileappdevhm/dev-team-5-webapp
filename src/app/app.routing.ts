@@ -1,16 +1,16 @@
 import {Routes, RouterModule} from '@angular/router';
 
 import {AuthGuard} from './guards/auth.guard';
-import {LocationsComponent} from "./components/locations/locations.component";
-import {ProfileComponent} from "./components/profile/profile.component";
-import {LoginComponent} from "./components/login/login.component";
-import {CourseListComponent} from "./components/course-list/course-list.component";
-import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
-import {Welcome} from "./components/welcome/welcome";
-import {ScheduleComponent} from "./components/schedule/schedule.component";
-import {FavoritesListComponent} from "./components/favorites-list/favorites-list.component";
-import {ContactComponent} from "./components/contact/contact.component";
-import {LogoutComponent} from "./components/logout/logout.component";
+import {LocationsComponent} from './components/locations/locations.component';
+import {ProfileComponent} from './components/profile/profile.component';
+import {LoginComponent} from './components/login/login.component';
+import {CourseListComponent} from './components/course-list/course-list.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {Welcome} from './components/welcome/welcome';
+import {ScheduleComponent} from './components/schedule/schedule.component';
+import {FavoritesListComponent} from './components/favorites-list/favorites-list.component';
+import {ContactComponent} from './components/contact/contact.component';
+import {LogoutComponent} from './components/logout/logout.component';
 import { DescriptionComponent } from './components/description/description.component';
 import { SecurityComponent } from './components/security/security.component';
 
@@ -63,12 +63,12 @@ const appRoutes: Routes = [
     // data: { title: 'Hilfe zum Login' }
   },
   {
-    path:'contact',
+    path: 'contact',
     component: ContactComponent,
     canActivate: [AuthGuard]
   },
   {
-    path:'security',
+    path: 'security',
     component: SecurityComponent,
   },
   {
