@@ -66,7 +66,7 @@ export class CourseListComponent implements OnInit {
   getFavorites() {
     this.favList = [];
 
-    this.http.get(SERVER_URL + '/Course').subscribe(data => {
+    this.http.get(SERVER_URL + '/courses').subscribe(data => {
       for (const key in data) {
         if (data.hasOwnProperty(key)) {
           this.favList.push(data[key]);
@@ -77,7 +77,7 @@ export class CourseListComponent implements OnInit {
 
   addToFav(param: CourseObject) {
 
-    this.http.post(SERVER_URL + '/Course', {
+    this.http.post(SERVER_URL + '/courses', {
 
       CourseId: param.id,
       CourseName: param.name,
