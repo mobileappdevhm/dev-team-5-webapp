@@ -40,14 +40,14 @@ export class LoginService {
     this.http.post(API_LOGIN, requestBody).subscribe( (result: IUser) => {
       if (result.user !== null) {
         this.userData = result;
-        this.saveToLocalStorage('userData', this.userData);
+        LoginService.saveToLocalStorage('userData', this.userData);
         this.userid = this.userData.user.id;
         this.user_firstname = this.userData.user.firstName;
         this.user_lastname = this.userData.user.lastName;
         this.user_curriculum = this.userData.curriculum;
         this.loggedIn.next(true);
       } else {
-        this.saveToLocalStorage('userData', this.userData);
+        LoginService.saveToLocalStorage('userData', this.userData);
         this.userData = null;
         this.loggedIn.next(false);
       }
