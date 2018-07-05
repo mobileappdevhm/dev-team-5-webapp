@@ -8,10 +8,10 @@
   </div>
   <div class="login-wrapper">
     <div class="input-element">
-      <span class="sr-only">Username</span> <input id="user" type="text" placeholder="Username" [(ngModel)]="username" />
+      <span class="sr-only">Username</span> <input id="user" type="text" placeholder="Username" [(ngModel)]="username" (keydown)="onKeydown($event)" />
     </div>
     <div class="input-element">
-      <span class="sr-only">Password</span> <input  id="pass" type="password" placeholder="Password" [(ngModel)]="password" />
+      <span class="sr-only">Password</span> <input  id="pass" type="password" placeholder="Password" [(ngModel)]="password" (keydown)="onKeydown($event)" />
     </div>
     <div>
       <div class="input-element" >
